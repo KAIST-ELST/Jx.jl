@@ -1,0 +1,42 @@
+main: # Get started
+  #link: /#
+  #dropdown:
+  #  - name: Install
+  #    link: /page-1/
+  #  - name: Page No Sidebar
+  #    link: /page-2/
+  #  - name: Page With Menubar
+  #    link: /page-3/
+  #  - name: Page With Tabs
+  #    link: /page-4/
+  #  - name: Page Without Footer
+  #    link: /page-5/
+  #  - name: Page Without Hero
+  #    link: /page-without-hero/
+  #  - name: Landing Page With Callouts
+  #    link: /landing/
+  - title: Feature
+    url: /docs/feature/
+  - title: Getting Started
+    url: /docs/quick-start-guide/
+    children:
+      - title: "Quick-Start Guide"
+        url: /docs/quick-start-guide/
+      - title: "Structure"
+        url: /docs/structure/
+      - title: "Installation"
+        url: /docs/installation/
+      - title: "Upgrading"
+        url: /docs/upgrading/
+  - title: Publication
+    url: /publication/
+    permalink: /publication/
+  - title: Acknowledegment
+    url: /blog/
+  - title: People
+    url: /people/
+# - title: "External Link"
+#   url: https://google.com
+
+
+
