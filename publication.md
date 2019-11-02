@@ -9,7 +9,7 @@ title: "Publications"
 
 ### [Reliability and applicability of magnetic-force linear response theory: Numerical parameters, predictability, and orbital resolution. PRB (2018)](https://doi.org/10.1103/PhysRevB.97.125132)
 
-In this paper, we tested on classical metal, insulator systems related to MFT. Extensive tests were performed on numerical parameter dependences such as basis orbital set, LDA + U parameter.
+In this paper, we examined spin exchange interaction **J** on classical magnetic metal, insulator systems by MFT. Extensive tests were performed on numerical parameter dependences such as basis orbital set, LDA + U parameter.
 Also, comparisons were made between MFT based on meta-stable spin configurations, and expansion to orbital-resolved magnetic interactions are presented.
 
 [![2](https://journals.aps.org/prb/article/10.1103/PhysRevB.97.125132/figures/2/thumbnail)](https://doi.org/10.1103/PhysRevB.97.125132)

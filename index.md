@@ -40,4 +40,7 @@ Our **Jx** is a user-friendly and efficient tool to calculate magnetic interacti
 1. Without calculating the supercell, it computes short- and long-term interactions.
 1. It is also possible to calculate an orbital-resolved matrix form of magnetic couplings.
 
-## What is MFT?
+---
+# [Usage and example](docs/#examples)
+
+# [How to install](docs/#quick-start)
