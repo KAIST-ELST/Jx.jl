@@ -37,7 +37,8 @@ A typical example is the distorted oxides in which the local $x,y,z$ coordinate 
 
 ## Support mulitple Tight-binding Hamiltonian
 
-We support following Hamiltonian interfaces:
+Basically, any tight-binding style Hamiltonian could be utilized for Jx.
+Currently we support following interfaces:
 * Full DFT Hamiltonian from [OpenMX](http://www.openmx-square.org/) ![OpenMx](http://www.openmx-square.org/OpenMX_LOGO_S.PNG){:height="50px" width="50px"}
 * Wannier
     * [Openmx Wannier](http://www.openmx-square.org/openmx_man3.7/node109.html).
