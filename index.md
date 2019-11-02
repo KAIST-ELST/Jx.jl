@@ -36,9 +36,12 @@ header:
 
 
 
-Our **Jx** is a user-friendly and efficient tool to calculate magnetic interaction in solids and molecules.
+The **Jx** is a user-friendly and efficient tool to calculate magnetic interaction in solids and molecules.
+Key features are as follows:
 1. Without calculating the supercell, it computes short- and long-term interactions.
 1. It is also possible to calculate an orbital-resolved matrix form of magnetic couplings.
+
+See [features](docs/feature) page for more detailed capabilities.
 
 ---
 # [Usage and example](docs/#examples)
