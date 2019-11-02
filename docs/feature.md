@@ -23,11 +23,15 @@ Therefore, MFT can compute short and long-term interactions in moment space, wit
 {% include figure image_path="assets/images/Fig_Metal_basis_vs_J_Fe.svg" alt="Fe metal Jij profile" caption="The calculated **J**<sub>ij</sub> for bcc Fe as a function of interatomic distance." %}
 
 
-
-
 ## *J* coupling matrix (Orbital resolved interactions)
 
+
+
 ## Local axis redefinition for orbital resolved *J*
+
+In practice, a difficulty in analyzing magnetic materials arises from the absence of well-defined global coordinate axis. 
+A typical example is the distorted oxides in which the local $x,y,z$ coordinate at one site is not the same at another. When one tries to calculate the orbital-dependent magnetic coupling, this ambiguity can cause annoying problems. With this motivation, $\mathsf{J_x}$ provides functionality for the user to re-define the local coordinates.
+
 
 ## Support mulitple Tight-binding Hamiltonian
 
