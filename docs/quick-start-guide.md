@@ -26,6 +26,16 @@ git clone github.com/KAIST-ELST/DFTforge.jl
 julia install.jl
 ```
 
+<figure>
+   <a href="">
+   <img src="/assets/images/install2.gif" style="max-height: 200px;"
+      alt="Install example" />
+   </a>
+
+   <figcaption> Easy install</figcaption>
+</figure>
+
+
 ### Run example
 
 #### G-type AFM (anti ferromagnetic) NiO example

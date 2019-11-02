@@ -15,7 +15,7 @@ main: # Get started
   #    link: /page-without-hero/
   #  - name: Landing Page With Callouts
   #    link: /landing/
-  - title: Feature
+  - title: Features
     url: /docs/feature/
   - title: Getting Started
     url: /docs/quick-start-guide/
@@ -32,7 +32,7 @@ main: # Get started
     url: /publication/
     permalink: /publication/
   - title: Acknowledegment
-    url: /blog/
+    url: /acknowledegment/
   - title: People
     url: /people/
 # - title: "External Link"
