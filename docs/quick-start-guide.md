@@ -28,10 +28,10 @@ julia install.jl
 
 <figure>
    <a href="">
-   <img src="/assets/images/install2.gif" style="max-height: 200px;"
+   <img src="/assets/images/install2.gif"  
       alt="Install example" />
    </a>
-
+     <!--- style="max-height: 200px;" --->
    <figcaption> Easy install</figcaption>
 </figure>
 

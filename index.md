@@ -2,7 +2,7 @@
 # Feel free to add content and custom Front Matter to this file.
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
-layout: home
+layout: splash
 author_profile: false
 title: Jx
 excerpt: This is home of Jx which performs magnetic force theory (MFT) calculation.
@@ -16,6 +16,8 @@ header:
   #title: "test"
   #image: assets/images/Logo.svg
   overlay_image: assets/images/Logo_header.svg
+  #overlay_image: /assets/images/install2.gif
+  
   #overlay_color: rgba(0, 0, 196, 0.95)
   overlay_filter: "0.50"
   #overlay_filter: rgba(0, 0, 128, 0.15)
@@ -29,13 +31,13 @@ header:
 # **Jx**: The MFT software
 **Jx** is open source package for calculating spin exchange coupling parameters *J*<sub>ij</sub> based on [MFT (Magentic force theory)](acknowledegment/#the-mft-history).
 
-![Logo](assets/images/Logo.svg){:height="75%" width="75%"}
+![Logo](assets/images/Logo.svg){:style="max-width: 450px"} <!--- #{:height="55%" width="55%" max-width=20px; } --->
 
 
 
 
 Our **Jx** is a user-friendly and efficient tool to calculate magnetic interaction in solids and molecules.
- * Without calculating the supercell, it computes short- and long-term interactions.
- * It is also possible to calculate an orbital-resolved matrix form of magnetic couplings.
+1. Without calculating the supercell, it computes short- and long-term interactions.
+1. It is also possible to calculate an orbital-resolved matrix form of magnetic couplings.
 
 ## What is MFT?
