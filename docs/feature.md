@@ -26,6 +26,8 @@ Therefore, MFT can compute short and long-term interactions in moment space, wit
 ## *J* coupling matrix (Orbital resolved interactions)
 
 
+A useful feature of MFT is to calculate the orbitally decomposed magnetic response function. <!---\cite{kvashnin_exchange_2015,yoon_reliability_2018}. --->
+It means that a magnetic coupling constant is extended to a matrix. If we consider **d** orbital system, for example, each magnetic atom has five magnetic orbitals and the magnetic coupling J<sub>12</sub> (in between atom 1 and atom 2) is expressed by a 5X5 matrix J<sub>12</sub>.
 
 ## Local axis redefinition for orbital resolved *J*
 
