@@ -25,6 +25,12 @@ header:
 
 
   #caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
+
+toc: true
+toc_label: "Features"
+toc_icon: "cog"
+
+sitemap: true
 ---
 ![Julia1.0](https://img.shields.io/badge/Julia-1.0-blue.svg?longCache=true)  ![Julia1.1](https://img.shields.io/badge/Julia-1.1-blue.svg?longCache=true) ![Julia1.2](https://img.shields.io/badge/Julia-1.2-blue.svg?longCache=true)
 
@@ -47,3 +53,7 @@ See [features](docs/feature) page for more detailed capabilities.
 # [Usage and example](docs/#examples)
 
 # [How to install](docs/#quick-start)
+
+# [Publication](publication)
+
+# [Acknowledegment](acknowledegment)
