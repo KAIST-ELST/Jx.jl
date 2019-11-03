@@ -13,16 +13,15 @@ toc_icon: "cog"
 
 
 
-## Quick-start
+## How to install
 
-### Install
-
-### Run test
-
+ - [Quick start](quick-start-guide/#quick-start-install--run-example)
+ - [Step by step install](quick-start-guide/#install)
 
 ## Examples
 
-### NiO
+
+### [NiO](example_NiO)
 
 ### Fe
 

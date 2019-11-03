@@ -28,6 +28,8 @@ main: # Get started
         url: /docs/installation/
       - title: "Upgrading"
         url: /docs/upgrading/
+  - title: Documentation
+    url: /docs/
   - title: Publication
     url: /publication/
     permalink: /publication/
@@ -37,6 +39,3 @@ main: # Get started
     url: /people/
 # - title: "External Link"
 #   url: https://google.com
-
-
-
