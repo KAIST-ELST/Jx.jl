@@ -5,7 +5,7 @@
 layout: splash
 author_profile: false
 title: Jx
-excerpt: This is home of Jx which performs magnetic force theory (MFT) calculation.
+excerpt: The open source magnetic force theory (MFT) calculation project.
 header:
   #overlay_image: /assets/images/unsplash-image-1.jpg
   #overlay_filter: rgba(5, 0, 196, 0.15)
@@ -17,16 +17,16 @@ header:
   #image: assets/images/Logo.svg
   overlay_image: assets/images/Logo_header.svg
   #overlay_image: /assets/images/install2.gif
-  
+
   #overlay_color: rgba(0, 0, 196, 0.95)
   overlay_filter: "0.50"
   #overlay_filter: rgba(0, 0, 128, 0.15)
-  
-  
+
+
 
   #caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
 ---
-![Julia1.0](https://img.shields.io/badge/Julia-1.0-blue.svg?longCache=true)  ![Julia1.1](https://img.shields.io/badge/Julia-1.1-blue.svg?longCache=true) ![Julia1.2](https://img.shields.io/badge/Julia-1.2-blue.svg?longCache=true) 
+![Julia1.0](https://img.shields.io/badge/Julia-1.0-blue.svg?longCache=true)  ![Julia1.1](https://img.shields.io/badge/Julia-1.1-blue.svg?longCache=true) ![Julia1.2](https://img.shields.io/badge/Julia-1.2-blue.svg?longCache=true)
 
 # **Jx**: The MFT software
 **Jx** is open source package for calculating spin exchange coupling parameters *J*<sub>ij</sub> based on [MFT (Magentic force theory)](acknowledegment/#the-mft-history).
