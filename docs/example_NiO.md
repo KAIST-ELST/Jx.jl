@@ -46,7 +46,7 @@ julia  src/Jx_postprocess.jl --cellvectors  2_2_2 --baseatom1 1 --atom2 1,2 --or
 
 ---
 
-# Files contents
+# File contents
 
 ##  `NiO.dat`
 ```bash

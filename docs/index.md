@@ -22,6 +22,12 @@ toc_icon: "cog"
 
 
 ### [NiO](example_NiO)
+The basic example to perform *Jx* from full [OpenMX](http://www.openmx-square.org/) DFT Hamilton.
+
+### [NiO openmx Wannier](example_NiO_openmxWannier)
+
+### [NiO wannier90](example_NiO wannier90)
+
 
 ### Fe
 
