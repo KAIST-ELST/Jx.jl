@@ -27,12 +27,12 @@ Therefore, MFT can compute short and long-term interactions in moment space, wit
 
 
 A useful feature of MFT is to calculate the orbitally decomposed magnetic response function. <!---\cite{kvashnin_exchange_2015,yoon_reliability_2018}. --->
-It means that a magnetic coupling constant is extended to a matrix. If we consider **d** orbital system, for example, each magnetic atom has five magnetic orbitals and the magnetic coupling J<sub>12</sub> (in between atom 1 and atom 2) is expressed by a 5X5 matrix J<sub>12</sub>.
+It means that a magnetic coupling constant is extended to a matrix. If we consider **d** orbital system, for example, each magnetic atom has five magnetic orbitals and the magnetic coupling J<sub>12</sub> (in between atom 1 and atom 2) is expressed by a 5X5 matrix *J*<sub>12</sub>.
 
 ## Local axis redefinition for orbital resolved *J*
 
-In practice, a difficulty in analyzing magnetic materials arises from the absence of well-defined global coordinate axis. 
-A typical example is the distorted oxides in which the local $x,y,z$ coordinate at one site is not the same at another. When one tries to calculate the orbital-dependent magnetic coupling, this ambiguity can cause annoying problems. With this motivation, $\mathsf{J_x}$ provides functionality for the user to re-define the local coordinates.
+In practice, a difficulty in analyzing magnetic materials arises from the absence of well-defined global coordinate axis.
+A typical example is the distorted oxides in which the local `x,y,z` coordinate at one site is not the same at another. When one tries to calculate the orbital-dependent magnetic coupling, this ambiguity can cause annoying problems. With this motivation, *Jx* provides functionality for the user to re-define the local coordinates.
 
 
 ## Support mulitple Tight-binding Hamiltonian
@@ -47,7 +47,7 @@ Currently we support following interfaces:
 * Full DFT/QSGW Hamiltonian from [EcalJ](https://github.com/tkotani/ecalj)
 
 ---
-<!--- 
+<!---
 feature_row:
   - image_path: assets/images/Fig_Metal_basis_vs_J_Fe.svg
     alt: "placeholder image 1"
@@ -64,6 +64,6 @@ feature_row:
     title: "Placeholder 3"
     excerpt: "This is some sample content that goes here with **Markdown** formatting."
 
-{% include feature_row %} 
+{% include feature_row %}
 --->
 ---
