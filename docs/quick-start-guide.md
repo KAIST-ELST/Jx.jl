@@ -57,7 +57,7 @@ brew cask upgrade julia
  * For Windows see: [Julia Download](https://julialang.org/downloads/)
 
 
-## Install DFTforge
+## Install [DFTforge](https://kaist-elst.github.io/DFTforge.jl/)
 ```julia
 import Pkg
 Pkg.add("DFTforge")
