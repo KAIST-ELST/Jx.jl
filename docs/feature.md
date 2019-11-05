@@ -29,6 +29,9 @@ Therefore, MFT can compute short and long-term interactions in moment space, wit
 A useful feature of MFT is to calculate the orbitally decomposed magnetic response function. <!---\cite{kvashnin_exchange_2015,yoon_reliability_2018}. --->
 It means that a magnetic coupling constant is extended to a matrix. If we consider **d** orbital system, for example, each magnetic atom has five magnetic orbitals and the magnetic coupling J<sub>12</sub> (in between atom 1 and atom 2) is expressed by a 5X5 matrix *J*<sub>12</sub>.
 
+{% include figure image_path="assets/images/NiO_orbital.svg" alt="NiO J<sub>12</sub> matrix" caption="The calculated second neighbor **J**<sub>12</sub> along the *z* axis for AFM-G type NiO. The super exchange between *e<sub>g</sub>* orbital is clear shown in MFT" %}
+
+
 ## Local axis redefinition for orbital resolved *J*
 
 In practice, a difficulty in analyzing magnetic materials arises from the absence of well-defined global coordinate axis.
