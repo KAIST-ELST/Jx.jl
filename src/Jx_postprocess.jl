@@ -317,7 +317,7 @@ for result_i in 2:size(J_ij_R)[1]
 end
 
 plot_filename = "Jplot_" * string(base_atom) * "_" *
-   join(atom2_name_list,",") * "_" * orbital_name * ".html"
+   join(atom2_name_list,",") * "_" * orbital_name * ".pdf"
 
 println(" Writing Plot:",plot_filename)
 Plots.savefig(joinpath(root_dir,plot_filename))
