@@ -576,8 +576,8 @@ for (orbital1_i,orbital_selection1_local) in enumerate(orbital_selection1_list)
         orbital_selection_name = orbital_selection1_names[orbital1_i]*"_"*orbital_selection2_names[orbital2_i]*"__"*
           orbital_selection3_names[orbital3_i]*"__"*orbital_selection4_names[orbital4_i];
         println(DFTcommon.bar_string) # print ====...====
-        println(orbital_selection_name," mask1 ",orbital_selection1_local,"\tmask2 ",orbital_selection2_local,
-        "\tmask3 ",orbital_selection3_local,"\tmask4 ",orbital_selection4_local)
+        println(orbital_selection_name," selection1 ",orbital_selection1_local,"\tselection2 ",orbital_selection2_local,
+        "\tselection3 ",orbital_selection3_local,"\tselection4 ",orbital_selection4_local)
 
         # setup extra info
         energywindow_all1234_list = [
