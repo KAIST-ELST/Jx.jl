@@ -52,7 +52,7 @@ import DFTforge.DataFrames
 import DFTforge.FileIO
 import DFTforge.CSV
 import Plots
-import Glob
+import DFTforge.Glob
 
 using Statistics
 
@@ -76,7 +76,7 @@ end
 file_list = Array{String}(undef,0);
 for atom2_name in atom2_name_list
    atom_12name = string(base_atom) * "_" * string(atom2_name)
-   file_list_tmp = Glob.glob(joinpath(root_dir,"*" * atom_12name * "*" * orbital_name * "*.jld2") )
+   file_list_tmp = Glob.glob("*" * atom_12name * "*" * orbital_name * "*.jld2",root_dir)
    append!(file_list,file_list_tmp)
 end
 #get q points
