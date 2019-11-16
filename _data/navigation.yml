@@ -28,11 +28,11 @@ main: # Get started
         url: /docs/installation/
       - title: "Upgrading"
         url: /docs/upgrading/
-  - title: Documentation
+  - title: Doc
     url: /docs/
-  - title: Publication
-    url: /publication/
-    permalink: /publication/
+  - title: Publications
+    url: /publications/
+    permalink: /publications/
   - title: Acknowledegment
     url: /acknowledegment/
   - title: People
