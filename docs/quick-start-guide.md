@@ -31,7 +31,12 @@ Details are as follows:
 
 # Install
 
-## Install Julia
+## 1. Download the Jx code
+``` bash
+git clone https://github.com/KAIST-ELST/Jx.jl
+```
+
+## 2. Install Julia
 
 
 Currently we support latest Julia 1.0-1.2.* ([https://julialang.org/](https://julialang.org/))
@@ -57,7 +62,7 @@ brew cask upgrade julia
  * For Windows see: [Julia Download](https://julialang.org/downloads/)
 
 
-## Install [DFTforge](https://kaist-elst.github.io/DFTforge.jl/)
+## 3. Install [DFTforge](https://kaist-elst.github.io/DFTforge.jl/)
 ```julia
 import Pkg
 Pkg.add("DFTforge")
@@ -74,9 +79,12 @@ Pkg.add("DFTforge")
 --->
 
 
-# Run example
+## 4.Run example
 
-## G-type AFM (anti ferromagnetic) NiO example
+### G-type AFM (anti ferromagnetic) NiO example
 ```bash
 ./example_NiO_OpenMX.sh
 ```
+
+See the [NiO example](/docs/example_NiO/) page for the procedure the script does.
+

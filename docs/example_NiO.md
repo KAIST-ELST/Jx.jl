@@ -1,8 +1,8 @@
 ---
 layout: single #splash #single
 author_profile: false
-title: "NiO example"
-#classes: wide
+title: "NiO (OpenMX full Hamiltonian) example"
+classes: wide
 
 
 toc: true
@@ -11,7 +11,19 @@ toc_icon: "cog"
 
 ---
 
-The NiO example
+This is the NiO with OpenMX example.
+After the electronic structure is given,
+the MFT calculation procedures consist of two processes process of [calculating J(q)](#jq-calculation) and [converting J(q) to J(R)](#jq-jr-transformation).
+
+## The required files for Jx MFT calculation (with OpenMX)
+
+> [OpenMX result Hamiltonian file `*.scfout`](#niodat)
+
+> [The *Jx* input file `*.toml`](#nio_j_openmxtoml)
+
+These files are provided in the following example script.
+
+## Automated script
 
 Run following [script](#example_nio_openmxsh):
 
@@ -22,33 +34,30 @@ Run following [script](#example_nio_openmxsh):
 2. Than, *Jx* will perform *J(q)* calculation (The most time-consuming part. Roughly 5-10 min depending on CPU).
 3. After *J(q)* calculation done, the *J(q)* -> *J(R)* transformation will run.
 
-
 ----
 
-# The required files for Jx MFT calculation
-
-[OpenMX result Hamiltonian file `*.scfout`](#niodat)
-
-[The *Jx* input file `*.toml`](#nio_j_openmxtoml)
-
-----
-
-# J(q) calculation
+## J(q) calculation
 
 ```bash
-julia -p 4 src/Jx_col_spin_exchange.jl  -T examples/NiO_G-AFM_U0.OpenMx/nio_J_openmx.tom
+julia -p 4 src/Jx_col_spin_exchange.jl  -T examples/NiO_G-AFM.OpenMx/nio_J_openmx.tom
 ```
 
-# J(q)->J(R) transformation
+This is the main MFT procedure. 
+This is the most time-consuming part.
+
+> The parallel option can be given by `-p #of cpu core` or `--machine-file #PBS_NODES`. See [Julia parallel computing](https://docs.julialang.org/en/v1/manual/parallel-computing/#Starting-and-managing-worker-processes-1) for detailed options.
+
+## J(q)->J(R) transformation
+
 ```bash
-julia  src/Jx_postprocess.jl --cellvectors  2_2_2 --baseatom1 1 --atom2 1,2 --orbital_name all_all  examples/NiO_G-AFM_U0.OpenMx/jx.col.spin_0.0
+julia  src/Jx_postprocess.jl --cellvectors  2_2_2 --baseatom1 1 --atom2 1,2 --orbital_name all_all  examples/NiO_G-AFM.OpenMx/jx.col.spin_0.0
 ```
 
 ---
 
-# File contents
+## The files provided in the example script
 
-##  `NiO.dat`
+###  `NiO.dat`
 ```bash
 #
 # output Hamiltonian and overlap
@@ -56,8 +65,7 @@ julia  src/Jx_postprocess.jl --cellvectors  2_2_2 --baseatom1 1 --atom2 1,2 --or
 HS.fileout                   on        # on|off, default=off
 ```
 
-
-##  `nio_J_openmx.toml`
+###  `nio_J_openmx.toml`
 
 ```toml
 # This is DFT-forge TOML file
@@ -102,7 +110,7 @@ orbital_mask1_names = "[dz2,dx2y2,dxy,dyz,dxz]"
 orbital_mask2_names = "[dz2,dx2y2,dxy,dyz,dxz]"
 ```
 
-##  `./example_NiO_OpenMX.sh`:
+###  `./example_NiO_OpenMX.sh`:
 
 ```bash
 #!/bin/bash
