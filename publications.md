@@ -20,7 +20,7 @@ Also, comparisons were made between MFT based on meta-stable spin configurations
 [![5](https://journals.aps.org/prb/article/10.1103/PhysRevB.97.125132/figures/6/thumbnail)](https://doi.org/10.1103/PhysRevB.97.125132)
 
 
-### An open-source software for calculating magnetic interactions based on magnetic force theory.
+### Jx: An open-source software for calculating magnetic interactions based on magnetic force theory.
 [H. Yoon, T. J. Kim, J.-H. Sim, and M. J. Han, Computer Physics Communications 106927 (2019).](https://doi.org/10.1016/j.cpc.2019.106927)
 
 > The Opensource Jx code paper.
