@@ -1,10 +1,6 @@
 # This is DFT-forge TOML file
-DFTtype = "OpenMX" #  OpenMX EcaJ Wannier90
-#Wannier90type = "OpenMX" # OpenMX  VASP  EcalJ
-
+HamiltonianType = "OpenMX" # OpenMX, OpenMXWannier, Wannier90
 spintype = "co_spin" #Set Spin type, para, co_spin, nc_spin
-
-#result_file = "../examples/NiO/4cell/Ni6.0_O5.0-s2p2d2f1-4.25_0.0-4.180-k10/nio.scfout"
 result_file = "nio.scfout"
 atom12 = [[1,1],[1,2]]
 
