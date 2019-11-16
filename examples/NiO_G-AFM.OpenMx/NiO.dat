@@ -71,13 +71,13 @@ scf.ElectronicTemperature  300.0       # default=300 (K)
 scf.energycutoff           500.0       # default=150 (Ry)
 scf.maxIter                800         # default=40
 scf.EigenvalueSolver       band        # Recursion|Cluster|Band
-scf.Kgrid                  21 21 21      # means 4x4x4
+scf.Kgrid                  15 15 15 #21 21 21      # means 4x4x4
 scf.Mixing.Type           rmm-diis     # Simple|Rmm-Diis|Gr-Pulay|Kerker|Rmm-Diisk
 scf.Init.Mixing.Weight     0.220       # default=0.30
 scf.Min.Mixing.Weight      0.001       # default=0.001
-scf.Max.Mixing.Weight      0.220       # default=0.40
-scf.Mixing.History          20         # default=5
-scf.Mixing.StartPulay       40         # default=6
+scf.Max.Mixing.Weight      0.420       # default=0.40
+scf.Mixing.History          10         # default=5
+scf.Mixing.StartPulay       20         # default=6
 scf.Mixing.EveryPulay       1          # default=1
 scf.criterion             1.0e-8       # default=1.0e-6 (Hartree)
 scf.lapack.dste            dstevx      # dstegr|dstedc|dstevx, default=dstevx

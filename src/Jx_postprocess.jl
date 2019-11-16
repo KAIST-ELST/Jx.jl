@@ -180,9 +180,9 @@ function get_J_idx_1(cell_vect_list, item_idx)
   for (k,s) in cached_mat_dict
     #k = 1
     #s = MAT.matread(joinpath(root_dir,file_list_same_baseatom[k]));
-    q_point_fact_list = s["q_point_list"]/s["k_point_precision"];
+    q_point_frac_list = s["q_point_list"]/s["k_point_precision"];
 
-    q_point_cart =   q_point_fact_list[:,1] * transpose(rv[1,:]) + q_point_fact_list[:,2] * transpose(rv[2,:]) + q_point_fact_list[:,3] * transpose(rv[3,:]);
+    q_point_cart =   q_point_frac_list[:,1] * transpose(rv[1,:]) + q_point_frac_list[:,2] * transpose(rv[2,:]) + q_point_frac_list[:,3] * transpose(rv[3,:]);
 
 
     atom1 = s["atom1"];
@@ -221,11 +221,11 @@ function get_J_idx_2(cell_vect_list, atom1, atom2, item_idx, angle_idx)
   J_ij_R = [];
   #k = 1
   s = cached_mat_dict[atom1,atom2]
-  q_point_fact_list = s["q_point_list"]/s["k_point_precision"];
+  q_point_frac_list = s["q_point_list"]/s["k_point_precision"];
 
-  q_point_cart =   q_point_fact_list[:,1] * transpose(rv[1,:]) +
-   q_point_fact_list[:,2] * transpose(rv[2,:])+
-   q_point_fact_list[:,3] * tranpose(rv[3,:])
+  q_point_cart =   q_point_frac_list[:,1] * transpose(rv[1,:]) +
+   q_point_frac_list[:,2] * transpose(rv[2,:])+
+   q_point_frac_list[:,3] * tranpose(rv[3,:])
 
   atom1_global_xyz = s["Gxyz"][atom1,:];
   atom2_global_xyz = s["Gxyz"][atom2,:]
@@ -293,12 +293,13 @@ for result_i in 1:num_results
                          Dy = dist_vect[:,2],
                          Dz = dist_vect[:,3]
                         ); delim=',' )
+       DF = CSV.read(csv_filename)
+       println(DF[1:12,:])
 end
-
 ################################################################################
-# Plot first item
-################################################################################
-Plots.plotly()
+# Plot first 
+#############V###################################################################
+#Plots.plotly()
 dist_vect = J_ij_R[1][3]
 distance_scalar = sqrt.(real( sum(dist_vect.^2,dims=2) ))[:]
 label= string(J_ij_R[1][1])*"_"*string(J_ij_R[1][2])
