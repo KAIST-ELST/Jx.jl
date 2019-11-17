@@ -19,7 +19,7 @@ s = ArgParseSettings("Jx_postprocess.jl for J(q)->J(r):")
         help = "second atom index ex1:) 1,2 or by using wild card *"     # used by the help screen
     "--orbital_name"
         help = "used for selecting orbital ex:) [all_all] or [dz_dxy]"
-    "--baseatom"
+    "--baseatom1"
         arg_type = Int
         default = 0
         help = ""
@@ -63,7 +63,7 @@ for (k,v) in parsed_args
 end
 # read inputs
 root_dir = parsed_args["root_dir"]
-base_atom = parsed_args["baseatom"]
+base_atom = parsed_args["baseatom1"]
 atom2_name_list = [""]
 if !(Nothing == typeof(parsed_args["atom2"]))
     atom2_name_list = split(parsed_args["atom2"],",")
