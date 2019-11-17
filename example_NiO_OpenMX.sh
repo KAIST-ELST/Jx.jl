@@ -7,14 +7,14 @@ NC='\033[0m'
 
 source ~/.profile # to add Julia to path
 printf "${BLUE} 0. Unzip the example ${NC} \n"
-printf "${BLUE} examples/NiO_G-AFM_U0.OpenMx ${NC} \n"
+printf "${BLUE} examples/NiO_G-AFM.OpenMx ${NC} \n"
 
 cd "examples/NiO_G-AFM.OpenMx"
 
 # Unzip dft result
 # nio.scf : OpenMX full Hamiltonian info
 # nio.HWR : Wannier Hamiltonian from OpenMX
-tar xvf nio_dft_result.tar.xz
+tar xvf nio_dft_result.tar.gz
 
 cd "../../"
 # obtain J(q)
