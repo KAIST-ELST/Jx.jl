@@ -56,6 +56,6 @@ See [features](docs/feature) page for more detailed capabilities.
 
 # [How to install](docs/#quick-start)
 
-# [Publication](publication)
+# [Publications](publications)
 
 # [Acknowledegment](acknowledegment)
