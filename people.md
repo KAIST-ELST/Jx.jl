@@ -18,7 +18,7 @@ PhD candidate - Department of Physics KAIST
 ### Jae-Hoon Sim
 Postdoctoral researcher - Centre de Physique Théorique, Ecole Polytechnique
 
-### [Myung Joon Han](https://sites.google.com/site/myungjoonhan/)
+### Myung Joon Han
 
 Professor of Department of Physics – KAIST
 
