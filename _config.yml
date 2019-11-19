@@ -22,11 +22,11 @@ locale                   : "en-US"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Hongkee Yoon"
 description              : "Jx the MFT code."
-url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : "https://kaist-elst.github.io/Jx.jl/" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : KAIST-ELST/Jx.jl # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
-teaser                   : assets/images/Logo.svg # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-logo                     : assets/images/Logo_text.png # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
+repository               : "KAIST-ELST/Jx.jl" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+teaser                   : "assets/images/Logo.svg" # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+logo                     : "assets/images/Logo_text.png" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs              : true # true, false (default)
 words_per_minute         : 200
