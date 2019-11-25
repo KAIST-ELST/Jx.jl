@@ -86,5 +86,4 @@ Pkg.add("DFTforge")
 ./example_NiO_OpenMX.sh
 ```
 
-See the [NiO example](/docs/example_NiO/) page for the procedure the script does.
-
+See the [NiO example]({{site.url}}{{ site.baseurl }}/docs/example_NiO/) page for the procedure the script does.

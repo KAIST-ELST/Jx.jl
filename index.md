@@ -50,13 +50,13 @@ Key features are as follows:
 1. Without calculating the supercell, it computes short- and long-term interactions.
 1. It is also possible to calculate an orbital-resolved matrix form of magnetic couplings.
 
-See [features](docs/feature) page for more detailed capabilities.
+See [features]({{site.url}}{{ site.baseurl }}/docs/feature) page for more detailed capabilities.
 
 ---
-# [Usage and example](docs/#examples)
+# [Usage and example]({{site.url}}{{ site.baseurl }}/docs/#examples)
 
-# [How to install](docs/#quick-start)
+# [How to install]({{site.url}}{{ site.baseurl }}/docs/#quick-start)
 
-# [Publications](publications)
+# [Publications]({{site.url}}{{ site.baseurl }}/publications)
 
-# [Acknowledegment](acknowledegment)
+# [Acknowledegment]({{site.url}}{{ site.baseurl }}/acknowledegment)

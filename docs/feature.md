@@ -1,7 +1,7 @@
 ---
 layout: single
 author_profile: false
-title: "Feature"
+title: "Features"
 
 toc: true
 toc_label: "Features"

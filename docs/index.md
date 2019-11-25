@@ -11,7 +11,7 @@ toc_icon: "cog"
 
 ---
 
-## [Features](/docs/feature)
+## [Features]({{site.url}}{{ site.baseurl }}/docs/feature)
 
 ## How to install
 
