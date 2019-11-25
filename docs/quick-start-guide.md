@@ -12,14 +12,14 @@ toc_icon: "cog"
 
 The single script will install [Julia](#install-julia-httpsjulialangorg) & [DFTforge](#install-dftforge) & Jx
 
-``` bash
+```console
 git clone https://github.com/KAIST-ELST/Jx.jl
 cd Jx.jl
-./install.sh
+./install_julia_linux_mac.sh
 ```
 [Run example](#run-example)
 
-```
+```console
 ./example_NiO_OpenMX.sh
 ```
 
@@ -29,10 +29,10 @@ Details are as follows:
 2. Perform the MFT calculation.
 3. Save  *J*<sub>ij</sub> to CSV files and plot *J*<sub>ij</sub> to PDF file.
 
-# Step by step install
+# Step by step installation
 
 ## 1. Download the Jx code
-``` bash
+```console
 git clone https://github.com/KAIST-ELST/Jx.jl
 ```
 

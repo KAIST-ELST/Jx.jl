@@ -16,7 +16,7 @@ toc_icon: "cog"
 ## How to install
 
 ### [Quick start](quick-start-guide/#quick-start-install--run-example)
-### [Step by step install](quick-start-guide/#install)
+### [Step by step install](quick-start-guide/#step-by-step-installation)
 
 ## Examples
 
