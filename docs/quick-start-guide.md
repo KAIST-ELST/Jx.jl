@@ -29,7 +29,7 @@ Details are as follows:
 2. Perform the MFT calculation.
 3. Save  *J*<sub>ij</sub> to CSV files and plot *J*<sub>ij</sub> to PDF file.
 
-# Install
+# Step by step install
 
 ## 1. Download the Jx code
 ``` bash
