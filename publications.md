@@ -45,8 +45,8 @@ For users to share informations, please inform us your paper in which *Jx* have 
     * [S. W. Jang, S. Ryee, H. Yoon, and M. J. Han, Phys. Rev. B 98, 125126 (2018).](https://doi.org/10.1103/PhysRevB.98.125126)
 4. Microscopic understanding of magnetic interactions in bilayer CrI3 
     * [S. W. Jang, M. Y. Jeong, H. Yoon, S. Ryee, and M. J. Han, Phys. Rev. Materials 3, 031001 (2019).](https://doi.org/10.1103/PhysRevMaterials.3.031001)
-5. [Magnetic force theory combined with quasi-particle self-consistent GW method]
-    * [H. Yoon, S. W. Jang, J.-H. Sim, T. Kotani, and M. J. Han, Journal of Physics: Condensed Matter 31, 405503 (2019)(https://doi.org/10.1088/1361-648X/ab2b7e)
+5. Magnetic force theory combined with quasi-particle self-consistent GW method
+    * [H. Yoon, S. W. Jang, J.-H. Sim, T. Kotani, and M. J. Han, Journal of Physics: Condensed Matter 31, 405503 (2019)](https://doi.org/10.1088/1361-648X/ab2b7e)
 6. On the origin and the manipulation of ferromagnetism in Fe3GeTe2: defects and dopings
     * [S. W. Jang, M. Y. Jeong, H. Yoon, S. Ryee, and M. J. Han, ArXiv:1904.04510 [Cond-Mat] (2019).](http://arxiv.org/abs/1904.04510)
 7. Jx: An open-source software for calculating magnetic interactions based on magnetic force theory.
