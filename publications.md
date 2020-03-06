@@ -50,5 +50,5 @@ For users to share informations, please inform us your paper in which *Jx* have 
 6. On the origin and the manipulation of ferromagnetism in Fe3GeTe2: defects and dopings
     * [S. W. Jang, M. Y. Jeong, H. Yoon, S. Ryee, and M. J. Han, ArXiv:1904.04510 [Cond-Mat] (2019).](http://arxiv.org/abs/1904.04510)
 7. Jx: An open-source software for calculating magnetic interactions based on magnetic force theory.
-    * [H. Yoon, T. J. Kim, J.-H. Sim, and M. J. Han, Computer Physics Communications 106927 (2019).](https://doi.org/10.1016/j.cpc.2019.106927)
+    * [H. Yoon, T. J. Kim, J.-H. Sim, and M. J. Han, Computer Physics Communications 247, 106927 (2020).](https://doi.org/10.1016/j.cpc.2019.106927)
 
