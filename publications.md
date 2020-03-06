@@ -6,7 +6,7 @@ title: "Publications"
 
 # How to cite
 
-Please cite the following papers in any publications arising from the use of this code
+We kindly ask that if you use any of these in scientific work, please give proper credit by citing the follows:
 
 ### Reliability and applicability of magnetic-force linear response theory: Numerical parameters, predictability, and orbital resolution
 [H. Yoon, T. J. Kim, J.-H. Sim, S. W. Jang, T. Ozaki, and M. J. Han, Phys. Rev. B 97, 125132 (2018).](https://doi.org/10.1103/PhysRevB.97.125132)
