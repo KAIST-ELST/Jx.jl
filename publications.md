@@ -21,7 +21,7 @@ Also, comparisons were made between MFT based on meta-stable spin configurations
 
 
 ### Jx: An open-source software for calculating magnetic interactions based on magnetic force theory.
-[H. Yoon, T. J. Kim, J.-H. Sim, and M. J. Han, Computer Physics Communications 106927 (2019).](https://doi.org/10.1016/j.cpc.2019.106927)
+[H. Yoon, T. J. Kim, J.-H. Sim, and M. J. Han, Computer Physics Communications 247, 106927 (2020).](https://doi.org/10.1016/j.cpc.2019.106927)
 
 > The Opensource Jx code paper.
 > In this paper, we presented why our code is user-friendly and also efficient tool to calculate magnetic interaction in solids and molecules.
