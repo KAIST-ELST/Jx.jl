@@ -294,7 +294,8 @@ for result_i in 1:num_results
                          Dz = dist_vect[:,3]
                         ); delim=',' )
        DF = CSV.read(csv_filename)
-       println(DF[1:12,:])
+       num_elem2print = minimum([size(DF)[1],12])
+       println(DF[1:num_elem2print,:])
 end
 ################################################################################
 # Plot first 
