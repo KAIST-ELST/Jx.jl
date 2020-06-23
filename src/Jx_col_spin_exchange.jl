@@ -7,11 +7,10 @@
 
 #using ProgressMeter
 __precompile__(true)
-#X_VERSION = VersionNumber("0.6.1-dev+20190502");
-X_VERSION = VersionNumber("0.9.3-pub+20190529");
+X_VERSION = VersionNumber("0.9.5-pub+20200623");
 println(" JX_VERSION: ",X_VERSION)
 println(" Visit https://kaist-elst.github.io/DFTforge.jl/ for details & updates ")
-println(" Tested with Julia v1.0 and v1.1 which the most recent version of Julia in 201906 https://julialang.org/")
+println(" Tested with Julia v1.0 and v1.4 which the most recent version of Julia in 202006 https://julialang.org/")
 
 using Distributed
 import DFTforge
@@ -203,6 +202,18 @@ elseif (DFTcommon.Wannier90 == DFT_type)
   hamiltonian_info = set_current_dftdataset(result_file,result_file_dict,
   DFT_type,Wannier90_type,spin_type,atoms_orbitals_list,atomnum,atompos,basisTransform_rule)
   #hamiltonian_info = set_current_dftdataset(scf_r, DFT_type, spin_type,basisTransform_rule)
+elseif (DFTcommon.PlainwaveLobster == DFT_type)
+  print("PlainwaveLobster")
+  atomnum = arg_input.Wannier_Optional_Info.atomnum
+  atompos = arg_input.Wannier_Optional_Info.atompos
+  tv  = arg_input.Optional["tv"]
+  optionalInfo = Dict{AbstractString,Any}()
+  optionalInfo["tv"] = tv
+  optionalInfo["atomnum"] = atomnum
+  optionalInfo["atompos"] = atompos
+  optionalInfo["ChemP"] = arg_input.Optional["ChemP"]
+  println(tv)
+  hamiltonian_info = set_current_dftdataset(result_file, result_file_dict, DFT_type, spin_type,basisTransform_rule,optionalInfo)
 end
 
 DFTforge.pwork(set_current_dftdataset,(hamiltonian_info, 1));
