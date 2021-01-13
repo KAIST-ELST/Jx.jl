@@ -158,7 +158,7 @@ println("mask1list ",orbital_selection1_list,"\tmask2list ",orbital_selection2_l
 println("basisTransform", basisTransform_rule)
 
 
-cal_type = "jx.col.spin" # xq, ...
+cal_type = "jx2.col.spin" # xq, ...
 ## 1.4 Set caluations type and ouput folder
 if haskey(arg_input.Optional,"energywindow")
     energywindow_name = arg_input.Optional["energywindow"]["energywindow_name"]
@@ -264,7 +264,7 @@ DFTforge.pwork(cacheset,eigenstate_cache)
     #println(orbital_selection1)
 end
 @everywhere function init_variables(Input_ChemP_delta_ev ,Input_band_selection_on, Input_band_selection_lower, Input_band_selection_upper,
-    energywindow_all1234_list)
+    energywindow_all1234_list, k_point_list)
   global ChemP_delta_ev, band_selection_on, band_selection_lower, band_selection_upper;
   global energywindow_all_list, energywindow_1_list, energywindow_2_list, energywindow_3_list, energywindow_4_list
   ChemP_delta_ev = Input_ChemP_delta_ev;
@@ -277,6 +277,29 @@ end
   energywindow_2_list = energywindow_all1234_list[3]
   energywindow_3_list = energywindow_all1234_list[4]
   energywindow_4_list = energywindow_all1234_list[5]
+
+  #
+  global H_up_k_mean, H_dn_k_mean
+  cache_index = 1
+  TotalOrbitalNum = cacheread(cache_index).TotalOrbitalNum;
+  TotalOrbitalNum2 = TotalOrbitalNum;
+  #if (DFTcommon.non_colinear_type == spin_type)
+  #  TotalOrbitalNum2 = 2*TotalOrbitalNum;
+  #end
+
+
+  global H_up_k_mean = zeros(ComplexF64,TotalOrbitalNum2,TotalOrbitalNum2)
+  global H_dn_k_mean = zeros(ComplexF64,TotalOrbitalNum2,TotalOrbitalNum2)
+  for k_point in k_point_list
+    Hks_k_up::Hamiltonian_type  = cacheread_Hamiltonian(k_point,1,cache_index)
+    Hks_k_down::Hamiltonian_type = cacheread_Hamiltonian(k_point,2,cache_index)
+  
+    global H_up_k_mean += Hks_k_up
+    global H_dn_k_mean += Hks_k_down
+  end
+  H_up_k_mean /= length(k_point_list)
+  H_dn_k_mean /= length(k_point_list)
+
 end
 
 
@@ -295,6 +318,7 @@ num_return = 8; #local scope
   global orbital_selection3,orbital_selection4
   global ChemP_delta_ev, band_selection_on, band_selection_lower, band_selection_upper;
   global energywindow_all_list, energywindow_1_list, energywindow_2_list, energywindow_3_list, energywindow_4_list;
+  global H_up_k_mean,H_dn_k_mean
   #global SmallHks;
   ############################################################################
   ## Accessing Data Start
@@ -331,10 +355,17 @@ num_return = 8; #local scope
 
   # Get Hamiltonian
 # #=
+#=
   Hks_k_up::Hamiltonian_type  = cacheread_Hamiltonian(k_point,1,cache_index)
   Hks_kq_up::Hamiltonian_type  = cacheread_Hamiltonian(kq_point,1,cache_index)
   Hks_k_down::Hamiltonian_type = cacheread_Hamiltonian(k_point,2,cache_index)
   Hks_kq_down::Hamiltonian_type = cacheread_Hamiltonian(kq_point,2,cache_index)
+=#
+
+  Hks_k_up::Hamiltonian_type  = H_up_k_mean #cacheread_Hamiltonian(k_point,1,cache_index)
+  Hks_kq_up::Hamiltonian_type  = H_up_k_mean #  cacheread_Hamiltonian(kq_point,1,cache_index)
+  Hks_k_down::Hamiltonian_type = H_dn_k_mean #cacheread_Hamiltonian(k_point,2,cache_index)
+  Hks_kq_down::Hamiltonian_type = H_dn_k_mean #cacheread_Hamiltonian(kq_point,2,cache_index)
 # =#
   (orbitalStartIdx_list,orbitalNums) = cacheread_atomsOrbital_lists(cache_index)
 
@@ -597,7 +628,7 @@ for (orbital1_i,orbital_selection1_local) in enumerate(orbital_selection1_list)
           energywindow_3_list,energywindow_4_list
          ]
         DFTforge.pwork(init_orbital_selection,orbital_selection_input)
-        DFTforge.pwork(init_variables,ChemP_delta_ev,band_selection_on, band_selection_lower, band_selection_upper, energywindow_all1234_list)
+        DFTforge.pwork(init_variables,ChemP_delta_ev,band_selection_on, band_selection_lower, band_selection_upper, energywindow_all1234_list, k_point_list)
 
         (X_Q_nc,X_Q_mean_nc) = Qspace_Ksum_atomlist_parallel(Magnetic_Exchange_J_colinear,
         q_point_list,k_point_list,atom12_list,num_return)
