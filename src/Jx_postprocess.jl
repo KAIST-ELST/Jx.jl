@@ -96,7 +96,7 @@ global atom2 = 0
 for (k,v_filename) in enumerate(file_list)
   #s = MAT.matread(v_filename);
   println(v_filename)
-  s = FileIO.load(v_filename);
+  local s = FileIO.load(v_filename);
   global atom1 = s["atom1"];
   global atom2 = s["atom2"];
 
@@ -117,7 +117,7 @@ println("================ Selected result *.jld2 files =============")
 
 #atom1_frac_xyz = global_xyz[atom1,:];
 for (k,v) in cached_mat_dict
-  s = v;
+  local s = v;
 
   atom1_tmp = s["atom1"]
   atom2_tmp = s["atom2"]
