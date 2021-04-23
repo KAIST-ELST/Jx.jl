@@ -202,7 +202,8 @@ Opro-pz   0.250     0.250     0.250  0 0 1   1 0 0
 Opro-pz   0.750     0.750     0.750  0 0 1   1 0 0
 Wannier.Initial.Projectors>
 
-Wannier.Kgrid     8 8 8 #6 6 6 # 8 8 8
+#Wannier.Kgrid     8 8 8 #6 6 6 # 8 8 8
+Wannier.Kgrid    6 6 6  # 8 8 8
 Wannier.MaxShells   12
 
 Wannier.Interpolated.Bands              on   # on|off, default=off

@@ -1,4 +1,9 @@
-__precompile__(true)
+###############################################################################
+# Hongkee Yoon Hongkeeyoon@kaist.ac.kr
+# 2019.05
+# https://kaist-elst.github.io/DFTforge.jl/
+###############################################################################
+
 ###
 #using ProgressMeter
 import DFTforge
@@ -32,21 +37,8 @@ end
 
 #Pkg.add("Plots")
 #Pkg.add("Glob")
-
 #parsed_args = parse_args(ARGS, s)
-#=
-ARGS = "-q 3_3_3 ../examples/CrO2.U0.0/jq.spin.test.wannier_0.0/"
-ARGS = Array{String}(undef,0);
-push!(ARGS,"--cellvectors")
-push!(ARGS,"3_3_3")
-push!(ARGS,"--baseatom")
-push!(ARGS,"1")
-push!(ARGS,"--atom12")
-push!(ARGS,"1_1,1_2")
-push!(ARGS,"--orbital_name")
-push!(ARGS,"all_all")
-push!(ARGS,"../examples/CrO2.U0.0/jq.spin.test.wannier_0.0/")
-=#
+
 parsed_args = parse_args(ARGS, s)
 import DFTforge.DataFrames
 import DFTforge.FileIO
@@ -76,9 +68,10 @@ end
 file_list = Array{String}(undef,0);
 for atom2_name in atom2_name_list
    atom_12name = string(base_atom) * "_" * string(atom2_name)
-   file_list_tmp = Glob.glob("*" * atom_12name * "*" * orbital_name * "*.jld2",root_dir)
+   file_list_tmp = Glob.glob(joinpath(root_dir,"*_" * atom_12name * "_*" * orbital_name * "*.jld2") )
    append!(file_list,file_list_tmp)
 end
+sort!(file_list)
 #get q points
 cellvect_num = [2,2,2];
 if !(Nothing == typeof(parsed_args["cellvectors"]))
@@ -103,7 +96,7 @@ global atom2 = 0
 for (k,v_filename) in enumerate(file_list)
   #s = MAT.matread(v_filename);
   println(v_filename)
-  s = FileIO.load(v_filename);
+  local s = FileIO.load(v_filename);
   global atom1 = s["atom1"];
   global atom2 = s["atom2"];
 
@@ -124,7 +117,7 @@ println("================ Selected result *.jld2 files =============")
 
 #atom1_frac_xyz = global_xyz[atom1,:];
 for (k,v) in cached_mat_dict
-  s = v;
+  local s = v;
 
   atom1_tmp = s["atom1"]
   atom2_tmp = s["atom2"]
@@ -143,12 +136,12 @@ for (k,v) in cached_mat_dict
 end
 
 
+println(global_xyz)
 
 
 
 
-
-function get_J(cell_vect_list, J_ij_Q_data, q_point_cart, atom1_global_xyz, atom2_global_xyz)
+function get_J(cell_vect_list, J_ij_Q_data, q_point_cart, q_point_frac_list, atom1_global_xyz, atom2_global_xyz)
   J_ij_cell_vect = zeros(ComplexF64,length(cell_vect_list));
   J_ij_pos_vects = zeros(length(cell_vect_list),3);
 
@@ -164,6 +157,11 @@ function get_J(cell_vect_list, J_ij_Q_data, q_point_cart, atom1_global_xyz, atom
     Rq = q_point_cart[:,1] * cell_global_xyz[1] +
     q_point_cart[:,2] * cell_global_xyz[2] + q_point_cart[:,3] * cell_global_xyz[3]
 
+    #println(size(v),"\t",size(q_point_frac_list[:,k]))
+    #Rq2 = sum([v[1],v[2],v[3]] .* q_point_frac_list[k])
+    Rq2 = v[1]*q_point_frac_list[:,1] + v[2]*q_point_frac_list[:,2] + v[3]*q_point_frac_list[:,3]
+    #println(Rq2)
+    #println(sum(abs.(Rq - Rq2*2*pi)))
     size(exp.(-1*im*Rq))
 
     J_12_R = mean(J_ij_Q_data.*exp.(-1*im*Rq));
@@ -193,7 +191,7 @@ function get_J_idx_1(cell_vect_list, item_idx)
       atom1_global_xyz," ",atom2_global_xyz,")")
     #atom1_frac_xyz[:]
 
-    (J,dist_vect) = get_J(cell_vect_list, s["Jij_Q_matlab"][item_idx, 1], q_point_cart, atom1_global_xyz[:], atom2_global_xyz[:] );
+    (J,dist_vect) = get_J(cell_vect_list, s["Jij_Q_matlab"][item_idx, 1], q_point_cart,q_point_frac_list, atom1_global_xyz[:], atom2_global_xyz[:] );
     distance_scalar = sqrt.(real( sum(dist_vect.^2,dims=2)[:] ));
     v = sortperm(distance_scalar);
     distance_scalar = distance_scalar[v];
@@ -260,67 +258,81 @@ for cell_vect_x in cell_vect_x_list
   end
 end
 
-J_ij_R = get_J_idx_1(cell_vect_list, 1)
-size(J_ij_R)[1]
-atom12_num = size(J_ij_R)[1];
-atom12_num = size(J_ij_R)[1];
-##=
-println("================ Writing CSV & Plotfile  =============")
-num_results = size(J_ij_R)[1]
-@assert(num_results == length(file_list))
-for result_i in 1:num_results
-    s_tmp = J_ij_R[result_i][6]
-    file_name = s_tmp["filename"]
+for xyz_i in 1:1
+   J_ij_R = get_J_idx_1(cell_vect_list, xyz_i)
+   size(J_ij_R)[1]
+   atom12_num = size(J_ij_R)[1];
+   atom12_num = size(J_ij_R)[1];
+   ##=
+   println("================ Writing CSV & Plotfile  =============")
+   num_results = size(J_ij_R)[1]
+   println(num_results," ", length(file_list))
+   @assert(num_results == length(file_list))
+   for result_i in 1:num_results
+       s_tmp = J_ij_R[result_i][6]
+       file_name = s_tmp["filename"]
 
-    basefile =  splitext(file_name)[1]
-    #basefile =  splitext(file_list[result_i])[1]
-    csv_filename = basefile*".csv"
-    println(" Writing CSV:", basename(csv_filename))
+       basefile =  splitext(file_name)[1]
+       #basefile =  splitext(file_list[result_i])[1]
+       csv_filename = basefile * "__" * string(xyz_i) * ".csv"
+       println(" Writing CSV:", basename(csv_filename))
 
-    dist_vect = J_ij_R[result_i][3]
-    distance_scalar = sqrt.(real( sum(dist_vect.^2,dims=2) ))[:]
-    #println(size(distance_scalar),size(J_ij_R[result_i][4]),size(cell_vect_list),size(dist_vect))
-    Rxyz = collect(transpose(hcat(J_ij_R[result_i][4]...)))
+       dist_vect = J_ij_R[result_i][3]
+       distance_scalar = sqrt.(real( sum(dist_vect.^2,dims=2) ))[:]
+       #println(size(distance_scalar),size(J_ij_R[result_i][4]),size(cell_vect_list),size(dist_vect))
+       Rxyz = collect(transpose(hcat(J_ij_R[result_i][4]...)))
 
-    CSV.write(csv_filename,
-    DataFrames.DataFrame(Distance = distance_scalar,
-                         JmeV = J_ij_R[result_i][5] * 1000.0, # eV -> meV
-                         #Dxyz = dist_vect[:,1],
-                         Rx = Rxyz[:,1],
-                         Ry = Rxyz[:,2],
-                         Rz = Rxyz[:,3],
-                         Dx = dist_vect[:,1],
-                         Dy = dist_vect[:,2],
-                         Dz = dist_vect[:,3]
-                        ); delim=',' )
+       CSV.write(csv_filename,
+       DataFrames.DataFrame(Distance = distance_scalar,
+                            JmeV = J_ij_R[result_i][5] * 1000.0, # eV -> meV
+                            #Dxyz = dist_vect[:,1],
+                            Atom1 = J_ij_R[result_i][1], 
+                            Atom2 = J_ij_R[result_i][2],
+                            Rx = Rxyz[:,1],
+                            Ry = Rxyz[:,2],
+                            Rz = Rxyz[:,3],
+                            Dx = dist_vect[:,1],
+                            Dy = dist_vect[:,2],
+                            Dz = dist_vect[:,3]
+                           ); delim=',' )
+
        DF = CSV.read(csv_filename)
        println(DF[1:12,:])
+   end
+
+   ################################################################################
+   # Plot first item
+   ################################################################################
+   #Plots.plotly()
+   dist_vect = J_ij_R[1][3]
+   distance_scalar = sqrt.(real( sum(dist_vect.^2,dims=2) ))[:]
+   label= string(J_ij_R[1][1])*"_"*string(J_ij_R[1][2])*" : "*string(xyz_i)
+
+   Plots.plot(distance_scalar,J_ij_R[1][5] *1000.0, label = label)
+   Plots.title!(orbital_name)
+   ################################################################################
+   # Plot second to end of itmes
+   ################################################################################
+   for result_i in 2:size(J_ij_R)[1]
+       #println(result_i)
+       dist_vect = J_ij_R[result_i][3]
+       distance_scalar = sqrt.(real( sum(dist_vect.^2,dims=2) ))[:]
+       label= string(J_ij_R[result_i][1])*"_"*string(J_ij_R[result_i][2])
+
+       Plots.plot!(distance_scalar,J_ij_R[result_i][5] *1000.0, label = label)  # eV -> meV
+   end
+
+   plot_filename = "Jplot_" * string(base_atom) * "_" *
+      join(atom2_name_list,",") * "_" * orbital_name * "__" *string(xyz_i) *".pdf"
+
+   println(" Writing Plot:",plot_filename)
+   Plots.savefig(joinpath(root_dir,plot_filename))
+
+   plot_filename = "Jplot_" * string(base_atom) * "_" *
+      join(atom2_name_list,",") * "_" * orbital_name * "__" *string(xyz_i) *".svg"
+
+   println(" Writing Plot:",plot_filename)
+   Plots.savefig(joinpath(root_dir,plot_filename))
 end
-################################################################################
-# Plot first 
-#############V###################################################################
-#Plots.plotly()
-dist_vect = J_ij_R[1][3]
-distance_scalar = sqrt.(real( sum(dist_vect.^2,dims=2) ))[:]
-label= string(J_ij_R[1][1])*"_"*string(J_ij_R[1][2])
-
-Plots.plot(distance_scalar,J_ij_R[1][5] *1000.0, label = label)
-################################################################################
-# Plot second to end of itmes
-################################################################################
-for result_i in 2:size(J_ij_R)[1]
-    #println(result_i)
-    dist_vect = J_ij_R[result_i][3]
-    distance_scalar = sqrt.(real( sum(dist_vect.^2,dims=2) ))[:]
-    label= string(J_ij_R[result_i][1])*"_"*string(J_ij_R[result_i][2])
-
-    Plots.plot!(distance_scalar,J_ij_R[result_i][5] *1000.0, label = label)  # eV -> meV
-end
-
-plot_filename = "Jplot_" * string(base_atom) * "_" *
-   join(atom2_name_list,",") * "_" * orbital_name * ".pdf"
-
-println(" Writing Plot:",plot_filename)
-Plots.savefig(joinpath(root_dir,plot_filename))
 #Plots.plot!(J_ij_R[2][3],J_ij_R[2][4] *1000.0)
 println("================ All done =============")
