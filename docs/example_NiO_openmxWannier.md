@@ -28,6 +28,9 @@ In the primitive cell, two spins have different up, down order.
 After the electronic structure is given,
 the MFT calculation procedures consist of two processes process of [calculating J(q)](#jq-calculation) and [converting J(q) to J(R)](#jq-jr-transformation).
 
+
+> Before MFT calculation, it is STRONGLY recommended to compare the Wannier band with the original DFT band structure. Especially for the metallic systems, a small difference near the Fermi level could significantly impact linear response calculations.
+
 ## The required files for Jx MFT calculation (with OpenMX)
 
 > - [OpenMX result Hamiltonian file `*.HWR`](#niodat)
