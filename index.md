@@ -38,7 +38,8 @@ sitemap: true
 # *Jx*: The MFT software
 *Jx* is open source package for calculating spin exchange coupling parameters *J*<sub>ij</sub> based on [MFT (Magentic force theory)](acknowledegment/#the-mft-history).
 
-* Downloading Jx will be available soon. We are updating this homepage (2019-11-06).
+* Downloading Jx via this homepage will be available soon (2021-04).
+Currently, please refer to the our [CPC paper https://doi.org/10.1016/j.cpc.2019.106927](https://doi.org/10.1016/j.cpc.2019.106927)
 
 ![Logo](assets/images/Logo.svg){:style="max-width: 450px"} <!--- #{:height="55%" width="55%" max-width=20px; } --->
 
