@@ -53,20 +53,20 @@ julia -p 4 src/Jx_col_spin_exchange.jl  -T nio_J_wannier.toml
 
 This is the main MFT procedure. 
 This is the most time-consuming part.
-For MFT with Wannier Hamiltonians, the output path is `jx.col.spin.wannier_0.0` (not `jx.col.spin_0.0`),
- and inside the output path two files `jx.col.spin.wannier_nio_atomij_1_1_[all_all]_ChemPdelta_0.0.jld2`, `jx.col.spin.wannier_nio_atomij_1_2_[all_all]_ChemPdelta_0.0.jld2` will be generated.
+For MFT with Wannier Hamiltonians, the output path is `jx2.col.spin.wannier_0.0` (not `jx2.col.spin_0.0`),
+ and inside the output path two files `jx2.col.spin.wannier_nio_atomij_1_1_[all_all]_ChemPdelta_0.0.jld2`, `jx2.col.spin.wannier_nio_atomij_1_2_[all_all]_ChemPdelta_0.0.jld2` will be generated.
 
 
 > The parallel option can be given by `-p #of cpu core` or `--machine-file #PBS_NODES`. See [Julia parallel computing](https://docs.julialang.org/en/v1/manual/parallel-computing/#Starting-and-managing-worker-processes-1) for detailed options.
 
 ## J(q)->J(R) transformation
 ```bash
-julia  src/Jx_postprocess.jl --cellvectors  2_2_2 --baseatom 1 --atom2 1,2 --orbital_name all_all  jx.col.spin.wannier_0.0
+julia  src/Jx_postprocess.jl --cellvectors  2_2_2 --baseatom 1 --atom2 1,2 --orbital_name all_all  jx2.col.spin.wannier_0.0
 ```
 
 
-The output files are `jx.col.spin.wannier_nio_atomij_1_1_[all_all]_ChemPdelta_0.0.csv`
-`jx.col.spin.wannier_nio_atomij_1_2_[all_all]_ChemPdelta_0.0.csv` and the ploted image `Jplot_1_1,2_all_all.pdf`.
+The output files are `jx2.col.spin.wannier_nio_atomij_1_1_[all_all]_ChemPdelta_0.0.csv`
+`jx2.col.spin.wannier_nio_atomij_1_2_[all_all]_ChemPdelta_0.0.csv` and the ploted image `Jplot_1_1,2_all_all.pdf`.
 > Note that the raw sign of the MFT results contains information about whether a system likes or dislikes the current spin order. So, at the second nearest (4.18 Å) between 1-2 spins, +6 meV means that current antiferromagnetic ordering is preferred.
 
 
@@ -80,17 +80,17 @@ Jx_postprocess started (julia Jx_postprocess.jl --help for inputs)
 ================ User input =============
 baseatom => 1
 cellvectors => 2_2_2
-root_dir => jx.col.spin.wannier_0.0
+root_dir => jx2.col.spin.wannier_0.0
 orbital_name => all_all
 atom2 => 1,2
 ================ Selected result *.jld2 files =============
-jx.col.spin.wannier_0.0/jx.col.spin.wannier_nio_atomij_1_1_[all_all]_ChemPdelta_0.0.jld2
-jx.col.spin.wannier_0.0/jx.col.spin.wannier_nio_atomij_1_2_[all_all]_ChemPdelta_0.0.jld2
+jx2.col.spin.wannier_0.0/jx2.col.spin.wannier_nio_atomij_1_1_[all_all]_ChemPdelta_0.0.jld2
+jx2.col.spin.wannier_0.0/jx2.col.spin.wannier_nio_atomij_1_2_[all_all]_ChemPdelta_0.0.jld2
 ================ Selected result *.jld2 files =============
 (1, 2)atom_(i, j):(1, 2) global_xyz:([0.0, 0.0, 0.0] [4.18000019366829, 4.18000019366829, 4.18000019366829])
 (1, 1)atom_(i, j):(1, 1) global_xyz:([0.0, 0.0, 0.0] [0.0, 0.0, 0.0])
 ================ Writing CSV & Plotfile  =============
- Writing CSV:jx.col.spin.wannier_nio_atomij_1_2_[all_all]_ChemPdelta_0.0.csv
+ Writing CSV:jx2.col.spin.wannier_nio_atomij_1_2_[all_all]_ChemPdelta_0.0.csv
 12×8 DataFrames.DataFrame
 │ Row │ Distance │ JmeV       │ Rx    │ Ry    │ Rz    │ Dx          │ Dy          │ Dz          │
 │     │ Float64  │ Float64    │ Int64 │ Int64 │ Int64 │ Float64     │ Float64     │ Float64     │
@@ -107,7 +107,7 @@ jx.col.spin.wannier_0.0/jx.col.spin.wannier_nio_atomij_1_2_[all_all]_ChemPdelta_
 │ 10  │ 4.17999  │ 6.0283     │ -1    │ -1    │ 1     │ 2.64589e-6  │ 2.64589e-6  │ 4.17999     │
 │ 11  │ 4.17999  │ 6.02858    │ -1    │ 1     │ -1    │ 2.64589e-6  │ 4.17999     │ 2.64589e-6  │
 │ 12  │ 4.17999  │ 6.02858    │ 1     │ -1    │ -1    │ 4.17999     │ 2.64589e-6  │ 2.64589e-6  │
- Writing CSV:jx.col.spin.wannier_nio_atomij_1_1_[all_all]_ChemPdelta_0.0.csv
+ Writing CSV:jx2.col.spin.wannier_nio_atomij_1_1_[all_all]_ChemPdelta_0.0.csv
 12×8 DataFrames.DataFrame
 │ Row │ Distance │ JmeV        │ Rx    │ Ry    │ Rz    │ Dx       │ Dy       │ Dz       │
 │     │ Float64  │ Float64     │ Int64 │ Int64 │ Int64 │ Float64  │ Float64  │ Float64  │

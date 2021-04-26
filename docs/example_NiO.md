@@ -54,19 +54,19 @@ julia -p 4 src/Jx_col_spin_exchange.jl  -T examples/NiO_G-AFM.OpenMx/nio_J_openm
 
 This is the main MFT procedure. 
 This is the most time-consuming part.
-The output path is  `jx.col.spin_0.0` and inside the output path two files `jx.col.spin_nio_atomij_1_1_[all_all]_ChemPdelta_0.0.jld2`,`jx.col.spin_nio_atomij_1_2_[all_all]_ChemPdelta_0.0.jld2` will be generated.
+The output path is  `jx2.col.spin_0.0` and inside the output path two files `jx2.col.spin_nio_atomij_1_1_[all_all]_ChemPdelta_0.0.jld2`,`jx2.col.spin_nio_atomij_1_2_[all_all]_ChemPdelta_0.0.jld2` will be generated.
 
 > The parallel option can be given by `-p #of cpu core` or `--machine-file #PBS_NODES`. See [Julia parallel computing](https://docs.julialang.org/en/v1/manual/parallel-computing/#Starting-and-managing-worker-processes-1) for detailed options.
 
 ## J(q)->J(R) transformation
 
 ```bash
-julia  src/Jx_postprocess.jl --cellvectors  2_2_2 --baseatom1 1 --atom2 1,2 --orbital_name all_all  examples/NiO_G-AFM.OpenMx/jx.col.spin_0.0
+julia  src/Jx_postprocess.jl --cellvectors  2_2_2 --baseatom1 1 --atom2 1,2 --orbital_name all_all  examples/NiO_G-AFM.OpenMx/jx2.col.spin_0.0
 ```
 
-For MFT with Wannier Hamiltonians, the output path is  `jx.col.spin_0.0`.
-The output files are `jx.col.spin.wannier_nio_atomij_1_1_[all_all]_ChemPdelta_0.0.csv`
-`jx.col.spin.wannier_nio_atomij_1_2_[all_all]_ChemPdelta_0.0.csv` and the ploted image `Jplot_1_1,2_all_all.pdf`.
+For MFT with Wannier Hamiltonians, the output path is  `jx2.col.spin_0.0`.
+The output files are `jx2.col.spin.wannier_nio_atomij_1_1_[all_all]_ChemPdelta_0.0.csv`
+`jx2.col.spin.wannier_nio_atomij_1_2_[all_all]_ChemPdelta_0.0.csv` and the ploted image `Jplot_1_1,2_all_all.pdf`.
 > Note that the raw sign of the MFT results contains information about whether a system likes or dislikes the current spin order. So, at the second nearest (4.18 Å) between 1-2 spins, +4.9 meV means that current antiferromagnetic ordering is preferred.
 
 
@@ -76,17 +76,17 @@ Jx_postprocess started (julia Jx_postprocess.jl --help for inputs)
 ================ User input =============
 cellvectors => 2_2_2
 baseatom1 => 1
-root_dir => examples/NiO_G-AFM.OpenMx/jx.col.spin_0.0
+root_dir => examples/NiO_G-AFM.OpenMx/jx2.col.spin_0.0
 orbital_name => all_all
 atom2 => 1,2
 ================ Selected result *.jld2 files =============
-examples/NiO_G-AFM.OpenMx/jx.col.spin_0.0/jx.col.spin_nio_atomij_1_1_[all_all]_ChemPdelta_0.0.jld2
-examples/NiO_G-AFM.OpenMx/jx.col.spin_0.0/jx.col.spin_nio_atomij_1_2_[all_all]_ChemPdelta_0.0.jld2
+examples/NiO_G-AFM.OpenMx/jx2.col.spin_0.0/jx2.col.spin_nio_atomij_1_1_[all_all]_ChemPdelta_0.0.jld2
+examples/NiO_G-AFM.OpenMx/jx2.col.spin_0.0/jx2.col.spin_nio_atomij_1_2_[all_all]_ChemPdelta_0.0.jld2
 ================ Selected result *.jld2 files =============
 (1, 2)atom_(i, j):(1, 2) global_xyz:([0.0, 0.0, 0.0] [4.1799999990685945, 4.1799999990685945, 4.1799999990685945])
 (1, 1)atom_(i, j):(1, 1) global_xyz:([0.0, 0.0, 0.0] [0.0, 0.0, 0.0])
 ================ Writing CSV & Plotfile  =============
- Writing CSV:jx.col.spin_nio_atomij_1_2_[all_all]_ChemPdelta_0.0.csv
+ Writing CSV:jx2.col.spin_nio_atomij_1_2_[all_all]_ChemPdelta_0.0.csv
 12×8 DataFrames.DataFrame
 │ Row │ Distance │ JmeV      │ Rx    │ Ry    │ Rz    │ Dx          │ Dy          │ Dz      │
 │     │ Float64  │ Float64   │ Int64 │ Int64 │ Int64 │ Float64     │ Float64     │ Float64 │
@@ -103,7 +103,7 @@ examples/NiO_G-AFM.OpenMx/jx.col.spin_0.0/jx.col.spin_nio_atomij_1_2_[all_all]_C
 │ 10  │ 4.18     │ 4.85915   │ 0     │ -2    │ 0     │ 0.0         │ -4.18       │ 0.0     │
 │ 11  │ 4.18     │ 4.85915   │ 0     │ 0     │ -2    │ 0.0         │ 0.0         │ -4.18   │
 │ 12  │ 4.18     │ 4.85915   │ 1     │ -1    │ -1    │ 4.18        │ 0.0         │ 0.0     │
- Writing CSV:jx.col.spin_nio_atomij_1_1_[all_all]_ChemPdelta_0.0.csv
+ Writing CSV:jx2.col.spin_nio_atomij_1_1_[all_all]_ChemPdelta_0.0.csv
 12×8 DataFrames.DataFrame
 │ Row │ Distance │ JmeV       │ Rx    │ Ry    │ Rz    │ Dx      │ Dy      │ Dz      │
 │     │ Float64  │ Float64    │ Int64 │ Int64 │ Int64 │ Float64 │ Float64 │ Float64 │
@@ -220,7 +220,7 @@ sleep 2
 julia -p 4 src/Jx_col_spin_exchange.jl  -T examples/NiO_G-AFM_U0.OpenMx/nio_J_openmx.toml
 # J(q) -> J(R)
 printf "${BLUE} 2. Transform J(q) -> J(Rij) ${NC} \n"
-printf "${GREEN}   julia  src/Jx_postprocess.jl --cellvectors  2_2_2 --baseatom1 1 --atom2 1,2 --orbital_name all_all  examples/NiO_G-AFM_U0.OpenMx/jx.col.spin_0.0 ${NC} \n"
+printf "${GREEN}   julia  src/Jx_postprocess.jl --cellvectors  2_2_2 --baseatom1 1 --atom2 1,2 --orbital_name all_all  examples/NiO_G-AFM_U0.OpenMx/jx2.col.spin_0.0 ${NC} \n"
 sleep 2
-julia  src/Jx_postprocess.jl --cellvectors  2_2_2 --baseatom1 1 --atom2 1,2 --orbital_name all_all  examples/NiO_G-AFM_U0.OpenMx/jx.col.spin_0.0
+julia  src/Jx_postprocess.jl --cellvectors  2_2_2 --baseatom1 1 --atom2 1,2 --orbital_name all_all  examples/NiO_G-AFM_U0.OpenMx/jx2.col.spin_0.0
 ```
