@@ -39,7 +39,7 @@ git clone https://github.com/KAIST-ELST/Jx.jl
 ## 2. Install Julia
 
 
-Currently we support latest Julia 1.0-1.2.* ([https://julialang.org/](https://julialang.org/))
+Currently we support latest Julia 1.0-1.6.* ([https://julialang.org/](https://julialang.org/))
 
  * For Linux system:
 
