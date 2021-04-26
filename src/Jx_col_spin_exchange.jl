@@ -2,15 +2,17 @@
 # Hongkee Yoon Hongkeeyoon@kaist.ac.kr
 # 2019.05
 # https://kaist-elst.github.io/DFTforge.jl/
+# https://kaist-elst.github.io/Jx.jl/
 ###############################################################################
 # [PhysRevB.97.125132](https://doi.org/10.1103/PhysRevB.97.125132)
+# [Comput. Phys. Commun.247.106927](https://10.1016/j.cpc.2019.106927)
 
 #using ProgressMeter
 __precompile__(true)
-X_VERSION = VersionNumber("0.9.5-pub+20200623");
+X_VERSION = VersionNumber("0.9.8-pub+20210410");
 println(" JX_VERSION: ",X_VERSION)
 println(" Visit https://kaist-elst.github.io/DFTforge.jl/ for details & updates ")
-println(" Tested with Julia v1.0 and v1.4 which the most recent version of Julia in 202006 https://julialang.org/")
+println(" Tested with Julia v1.0 and v1.6 which the most recent version of Julia in 202104 https://julialang.org/")
 
 using Distributed
 import DFTforge

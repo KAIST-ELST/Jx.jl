@@ -63,4 +63,4 @@ printf "${BLUE}./example_NiO_OpenMX.sh ${NC}\n"
 echo '========================================================================='
 
 # install DFTforge
-# julia install.jl
+julia install.jl
