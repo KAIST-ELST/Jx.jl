@@ -38,8 +38,14 @@ git clone https://github.com/KAIST-ELST/Jx.jl
 
 ## 2. Install Julia
 
+![Julia1.3](https://img.shields.io/badge/Julia-1.3-blue.svg?longCache=true)
+![Julia1.4](https://img.shields.io/badge/Julia-1.4-blue.svg?longCache=true)
+![Julia1.5](https://img.shields.io/badge/Julia-1.5-blue.svg?longCache=true)
+![Julia1.6](https://img.shields.io/badge/Julia-1.6-blue.svg?longCache=true)
 
-Currently we support latest Julia 1.0-1.6.* ([https://julialang.org/](https://julialang.org/))
+
+Currently we support latest Julia 1.3-1.6.* ([https://julialang.org/](https://julialang.org/))
+
 
  * For Linux system:
 
