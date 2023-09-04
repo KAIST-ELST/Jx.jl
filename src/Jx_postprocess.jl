@@ -2,6 +2,7 @@
 # Hongkee Yoon Hongkeeyoon@kaist.ac.kr
 # 2019.05
 # https://kaist-elst.github.io/DFTforge.jl/
+# 2023.09 Editted by Do Hoon kiem (kiem.dohoon@gmail.com)
 ###############################################################################
 
 ###
@@ -47,6 +48,7 @@ import Plots
 import DFTforge.Glob
 
 using Statistics
+
 
 ###
 println("================ User input =============")
@@ -296,7 +298,8 @@ for xyz_i in 1:1
                             Dz = dist_vect[:,3]
                            ); delim=',' )
 
-       DF = CSV.read(csv_filename)
+       #DF = CSV.read(csv_filename)  ## until julia version 1.5
+       DF = CSV.read(csv_filename, DataFrames.DataFrame) ## after julia ver 1.5 
        println(DF[1:12,:])
    end
 
