@@ -297,9 +297,11 @@ for xyz_i in 1:1
                             Dy = dist_vect[:,2],
                             Dz = dist_vect[:,3]
                            ); delim=',' )
-
-       #DF = CSV.read(csv_filename)  ## until julia version 1.5
-       DF = CSV.read(csv_filename, DataFrames.DataFrame) ## after julia ver 1.5 
+       if VERSION < v"1.6.0"
+         DF = CSV.read(csv_filename)  ## until julia version 1.5
+       else
+         DF = CSV.read(csv_filename, DataFrames.DataFrame) ## after julia ver 1.6 
+       end
        println(DF[1:12,:])
    end
 
