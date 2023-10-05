@@ -276,7 +276,8 @@ for xyz_i in 1:1
 
        basefile =  splitext(file_name)[1]
        #basefile =  splitext(file_list[result_i])[1]
-       csv_filename = basefile * "__" * string(xyz_i) * ".csv"
+       #csv_filename = basefile * "__" * string(xyz_i) * ".csv"
+       csv_filename = basefile * ".csv" # indexing is not needed for collinear
        println(" Writing CSV:", basename(csv_filename))
 
        dist_vect = J_ij_R[result_i][3]
@@ -328,13 +329,15 @@ for xyz_i in 1:1
    end
 
    plot_filename = "Jplot_" * string(base_atom) * "_" *
-      join(atom2_name_list,",") * "_" * orbital_name * "__" *string(xyz_i) *".pdf"
+      #join(atom2_name_list,",") * "_" * orbital_name * "__" *string(xyz_i) *".pdf"
+      join(atom2_name_list,",") * "_" * orbital_name * ".pdf"
 
    println(" Writing Plot:",plot_filename)
    Plots.savefig(joinpath(root_dir,plot_filename))
 
    plot_filename = "Jplot_" * string(base_atom) * "_" *
-      join(atom2_name_list,",") * "_" * orbital_name * "__" *string(xyz_i) *".svg"
+      #join(atom2_name_list,",") * "_" * orbital_name * "__" *string(xyz_i) *".svg"
+      join(atom2_name_list,",") * "_" * orbital_name * ".svg"
 
    println(" Writing Plot:",plot_filename)
    Plots.savefig(joinpath(root_dir,plot_filename))
