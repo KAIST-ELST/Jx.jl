@@ -45,10 +45,10 @@ A typical example is the distorted oxides in which the local `x,y,z` coordinate 
 
 Basically, any tight-binding style Hamiltonian could be utilized for Jx.
 Currently we support following interfaces:
-* Full DFT Hamiltonian from [OpenMX](http://www.openmx-square.org/) ![OpenMx](http://www.openmx-square.org/OpenMX_LOGO_S.PNG){:height="50px" width="50px"}
+* Full DFT Hamiltonian from [OpenMX](https://www.openmx-square.org/) ![OpenMx](http://www.openmx-square.org/OpenMX_LOGO_S.PNG){:height="50px" width="50px"}
 * Wannier
-    * [Openmx Wannier](http://www.openmx-square.org/openmx_man3.7/node109.html).
-    * [Wannier90](http://www.wannier.org/).
+    * [Openmx Wannier](https://www.openmx-square.org/openmx_man3.9/node141.html).
+    * [Wannier90](https://wannier.org/).
     * Adding custom Hamilton format interfaces are also possible.
 * Full DFT/QSGW Hamiltonian from [EcalJ](https://github.com/tkotani/ecalj)
 

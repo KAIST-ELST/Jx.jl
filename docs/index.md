@@ -22,14 +22,14 @@ toc_icon: "cog"
 
 
 ### [NiO](example_NiO)
-The basic example to perform *Jx* from full [OpenMX](http://www.openmx-square.org/) DFT Hamilton.
+The basic example to perform *Jx* from full [OpenMX](https://www.openmx-square.org/) DFT Hamilton.
 
 ### [NiO openmx Wannier](example_NiO_openmxWannier)
 
-The basic example to perform *Jx* from Wannier Hamilton base on [OpenMX](http://www.openmx-square.org/).
+The basic example to perform *Jx* from Wannier Hamilton base on [OpenMX](https://www.openmx-square.org/).
 
 ### [NiO Wannier90](example_NiO_Wannier90)
-The basic example to perform *Jx* from [Wannier90](http://www.wannier.org/) Hamilton.
+The basic example to perform *Jx* from [Wannier90](https://wannier.org/) Hamilton.
 
 
 <!--- Add more examples

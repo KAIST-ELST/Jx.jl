@@ -13,10 +13,13 @@ Postdoctoral researcher - Department of Physics KAIST
 ## The contributors
 
 ### Taek Jung Kim
-PhD candidate - Department of Physics KAIST
+PhD - Department of Physics KAIST
 
 ### Jae-Hoon Sim
 Postdoctoral researcher - Centre de Physique Théorique, Ecole Polytechnique
+
+### Do Hoon Kiem
+PhD - Department of Physics KAIST
 
 ### Myung Joon Han
 

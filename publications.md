@@ -52,3 +52,17 @@ For users to share informations, please inform us your paper in which *Jx* have 
 7. Jx: An open-source software for calculating magnetic interactions based on magnetic force theory.
     * [H. Yoon, T. J. Kim, J.-H. Sim, and M. J. Han, Computer Physics Communications 247, 106927 (2020).](https://doi.org/10.1016/j.cpc.2019.106927)
 
+8. Induced magnetic two-dimensionality by hole doping in the superconducting infinite-layer nickelate Nd1−xSrxNiO2
+    * [S. Ryee, H. Yoon, T. J. Kim, M. Y. Jeong, and M. J. Han, Phys. Rev. B 101, 064513 (2020).](https://doi.org/10.1103/PhysRevB.101.064513)
+
+9. Switching interlayer magnetic order in bilayer CrI3 by stacking reversal
+    * [X. Kong, H. Yoon, M. J. Han, L. Liang, Nanoscale, 13, 16172-16181 (2021)](https://doi.org/10.1039/D1NR02480A)
+
+10. Hund's physics and the magnetic ground state of CrOX (X=Cl,Br)
+    * [S. W. Jang, D. H. Kiem, J. Lee, Y.-G. Kang, H. Yoon, and M. J. Han, Phys. Rev. Materials 5, 034409 (2021)](https://doi.org/10.1103/PhysRevMaterials.5.034409)
+
+11. Strain engineering and the hidden role of magnetism in monolayer VTe2
+    * [D. H. Kiem, M. Y. Jeong, H. Yoon, and M. J. Han, Nanoscale (Communication), 14, 10009-10015 (2022)](https://doi.org/10.1039/D2NR03026H)
+
+12. Ab Initio Spin Hamiltonian and Topological Noncentrosymmetric Magnetism in Twisted Bilayer CrI3
+    * [K.-M. Kim, D. H. Kiem, G. Bednik, M. J. Han, and M. J. Park, Nano Lett. 23, 13, 6088-6094 (2023)](https://doi.org/10.1021/acs.nanolett.3c01529) 

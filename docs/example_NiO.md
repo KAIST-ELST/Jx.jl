@@ -179,14 +179,15 @@ q_point_num = [6,6,6]
 # you can choose [9-13] orbital.
 # Each orbital index names is as follows:
 # 9:dz2, 10:dx2y2, 11:dxy, 12:dyz, 13:dxz
+# You can check it through nio.out file.
 ##################################################################################################
 
 orbitalselection = false # true,false
 orbital_mask1_list = [[9],[10],[11],[12],[13]]
 orbital_mask2_list = [[9],[10],[11],[12],[13]]
 
-orbital_mask1_names = "[dz2,dx2y2,dxy,dyz,dxz]"
-orbital_mask2_names = "[dz2,dx2y2,dxy,dyz,dxz]"
+orbital_mask1_names = "[dz2,dx2y2,dxy,dxz,dyz]"
+orbital_mask2_names = "[dz2,dx2y2,dxy,dxz,dyz]"
 ```
 
 ###  `./example_NiO_OpenMX.sh`:
