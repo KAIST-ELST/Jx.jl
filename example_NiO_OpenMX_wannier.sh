@@ -30,4 +30,4 @@ julia -p 4 $JX_ROOT/src/Jx_col_spin_exchange.jl  -T nio_J_wannier.toml
 printf "${BLUE} 2. Transform J(q) -> J(Rij) ${NC} \n"
 printf "${GREEN}   julia  src/Jx_postprocess.jl --cellvectors  2_2_2 --baseatom1 1 --atom2 1,2 --orbital_name all_all  examples/NiO_G-AFM.OpenMx/jx2.col.spin_0.0 ${NC} \n"
 sleep 2
-julia  $JX_ROOT/src/Jx_postprocess.jl --cellvectors  2_2_2 --baseatom1 1 --atom2 1,2 --orbital_name all_all jx2.col.wannier_0.0
+julia  $JX_ROOT/src/Jx_postprocess.jl --cellvectors  2_2_2 --baseatom1 1 --atom2 1,2 --orbital_name all_all jx2.col.spin.wannier_0.0
