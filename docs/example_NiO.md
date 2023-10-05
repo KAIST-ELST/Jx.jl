@@ -67,7 +67,7 @@ julia  src/Jx_postprocess.jl --cellvectors  2_2_2 --baseatom1 1 --atom2 1,2 --or
 For MFT with Wannier Hamiltonians, the output path is  `jx2.col.spin_0.0`.
 The output files are `jx2.col.spin.wannier_nio_atomij_1_1_[all_all]_ChemPdelta_0.0.csv`
 `jx2.col.spin.wannier_nio_atomij_1_2_[all_all]_ChemPdelta_0.0.csv` and the ploted image `Jplot_1_1,2_all_all.pdf`.
-> Note that the raw sign of the MFT results contains information about whether a system likes or dislikes the current spin order. So, at the second nearest (4.18 Å) between 1-2 spins, +4.9 meV means that current antiferromagnetic ordering is preferred.
+> Note that the raw sign of the MFT results contains information about whether a system likes or dislikes the current spin order. So, at the second nearest (4.18 Å) between 1-2 spins, +8.5 meV means that current antiferromagnetic ordering is preferred.
 
 
 ```sh
@@ -105,7 +105,7 @@ jx2.col.spin_0.0/jx2.col.spin_nio_atomij_1_2_[all_all]_ChemPdelta_0.0.jld2
   10 │  4.18      8.54461       1      2      0     -2      0   0.0          -4.18            0.0
   11 │  4.18      8.5446        1      2      0      0     -2   0.0           0.0            -4.18
   12 │  4.18      8.54461       1      2      1     -1     -1   4.18          0.0             0.0
- Writing CSV:jx2.col.spin_nio_atomij_1_1_[all_all]_ChemPdelta_0.0__1.csv
+ Writing CSV:jx2.col.spin_nio_atomij_1_1_[all_all]_ChemPdelta_0.0.csv
 12×10 DataFrame
  Row │ Distance  JmeV        Atom1  Atom2  Rx     Ry     Rz     Dx       Dy       Dz
      │ Float64   Float64     Int64  Int64  Int64  Int64  Int64  Float64  Float64  Float64
@@ -122,8 +122,8 @@ jx2.col.spin_0.0/jx2.col.spin_nio_atomij_1_2_[all_all]_ChemPdelta_0.0.jld2
   10 │  5.11943  0.00673793      1      1      2     -1     -1     4.18    -2.09    -2.09
   11 │  5.11943  0.00673793      1      1     -1     -1      2    -2.09    -2.09     4.18
   12 │  5.11943  0.00624584      1      1     -1      0      0    -4.18    -2.09    -2.09
- Writing Plot:Jplot_1_1,2_all_all__1.pdf
- Writing Plot:Jplot_1_1,2_all_all__1.svg
+ Writing Plot:Jplot_1_1,2_all_all.pdf
+ Writing Plot:Jplot_1_1,2_all_all.svg
 ================ All done =============
 ```
 

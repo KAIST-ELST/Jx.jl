@@ -67,19 +67,17 @@ julia  src/Jx_postprocess.jl --cellvectors  2_2_2 --baseatom 1 --atom2 1,2 --orb
 
 The output files are `jx2.col.spin.wannier_nio_atomij_1_1_[all_all]_ChemPdelta_0.0.csv`
 `jx2.col.spin.wannier_nio_atomij_1_2_[all_all]_ChemPdelta_0.0.csv` and the ploted image `Jplot_1_1,2_all_all.pdf`.
-> Note that the raw sign of the MFT results contains information about whether a system likes or dislikes the current spin order. So, at the second nearest (4.18 Å) between 1-2 spins, +6 meV means that current antiferromagnetic ordering is preferred.
+> Note that the raw sign of the MFT results contains information about whether a system likes or dislikes the current spin order. So, at the second nearest (4.18 Å) between 1-2 spins, +11.0 meV means that current antiferromagnetic ordering is preferred.
 
 
 The output at terminal would look like bellow:
 
 ```sh
- Checking the updated version ...
- Current version 1.0.1 is the newest version.
- DFTforge Version 1.0.1
+ DFTforge Version 1.3.2
 Jx_postprocess started (julia Jx_postprocess.jl --help for inputs)
 ================ User input =============
-baseatom => 1
 cellvectors => 2_2_2
+baseatom1 => 1
 root_dir => jx2.col.spin.wannier_0.0
 orbital_name => all_all
 atom2 => 1,2
@@ -87,44 +85,47 @@ atom2 => 1,2
 jx2.col.spin.wannier_0.0/jx2.col.spin.wannier_nio_atomij_1_1_[all_all]_ChemPdelta_0.0.jld2
 jx2.col.spin.wannier_0.0/jx2.col.spin.wannier_nio_atomij_1_2_[all_all]_ChemPdelta_0.0.jld2
 ================ Selected result *.jld2 files =============
+[0.0 0.0 0.0; 4.18000019366829 4.18000019366829 4.18000019366829; 2.090000096834145 2.090000096834145 2.090000096834145; 6.270000290502435 6.270000290502435 6.270000290502434]
 (1, 2)atom_(i, j):(1, 2) global_xyz:([0.0, 0.0, 0.0] [4.18000019366829, 4.18000019366829, 4.18000019366829])
 (1, 1)atom_(i, j):(1, 1) global_xyz:([0.0, 0.0, 0.0] [0.0, 0.0, 0.0])
 ================ Writing CSV & Plotfile  =============
+2 2
  Writing CSV:jx2.col.spin.wannier_nio_atomij_1_2_[all_all]_ChemPdelta_0.0.csv
-12×8 DataFrames.DataFrame
-│ Row │ Distance │ JmeV       │ Rx    │ Ry    │ Rz    │ Dx          │ Dy          │ Dz          │
-│     │ Float64  │ Float64    │ Int64 │ Int64 │ Int64 │ Float64     │ Float64     │ Float64     │
-├─────┼──────────┼────────────┼───────┼───────┼───────┼─────────────┼─────────────┼─────────────┤
-│ 1   │ 2.9557   │ -0.0502568 │ -1    │ -1    │ 0     │ -2.09       │ -2.09       │ -2.64589e-6 │
-│ 2   │ 2.9557   │ -0.0501972 │ -1    │ 0     │ -1    │ -2.09       │ -2.64589e-6 │ -2.09       │
-│ 3   │ 2.9557   │ -0.0501972 │ 0     │ -1    │ -1    │ -2.64589e-6 │ -2.09       │ -2.09       │
-│ 4   │ 2.9557   │ -0.0501653 │ -1    │ 0     │ 0     │ 2.64589e-6  │ 2.09        │ 2.09        │
-│ 5   │ 2.9557   │ -0.0501653 │ 0     │ -1    │ 0     │ 2.09        │ 2.64589e-6  │ 2.09        │
-│ 6   │ 2.9557   │ -0.0502249 │ 0     │ 0     │ -1    │ 2.09        │ 2.09        │ 2.64589e-6  │
-│ 7   │ 4.17999  │ 6.02982    │ -2    │ 0     │ 0     │ -4.17999    │ -2.64589e-6 │ -2.64589e-6 │
-│ 8   │ 4.17999  │ 6.02982    │ 0     │ -2    │ 0     │ -2.64589e-6 │ -4.17999    │ -2.64589e-6 │
-│ 9   │ 4.17999  │ 6.02954    │ 0     │ 0     │ -2    │ -2.64589e-6 │ -2.64589e-6 │ -4.17999    │
-│ 10  │ 4.17999  │ 6.0283     │ -1    │ -1    │ 1     │ 2.64589e-6  │ 2.64589e-6  │ 4.17999     │
-│ 11  │ 4.17999  │ 6.02858    │ -1    │ 1     │ -1    │ 2.64589e-6  │ 4.17999     │ 2.64589e-6  │
-│ 12  │ 4.17999  │ 6.02858    │ 1     │ -1    │ -1    │ 4.17999     │ 2.64589e-6  │ 2.64589e-6  │
+12×10 DataFrame
+ Row │ Distance  JmeV        Atom1  Atom2  Rx     Ry     Rz     Dx           Dy           Dz
+     │ Float64   Float64     Int64  Int64  Int64  Int64  Int64  Float64      Float64      Float64
+─────┼────────────────────────────────────────────────────────────────────────────────────────────────
+   1 │  2.9557   -0.0771767      1      2     -1     -1      0  -2.09        -2.09        -2.64589e-6
+   2 │  2.9557   -0.0769231      1      2     -1      0     -1  -2.09        -2.64589e-6  -2.09
+   3 │  2.9557   -0.0769231      1      2      0     -1     -1  -2.64589e-6  -2.09        -2.09
+   4 │  2.9557   -0.0769231      1      2     -1      0      0   2.64589e-6   2.09         2.09
+   5 │  2.9557   -0.0769231      1      2      0     -1      0   2.09         2.64589e-6   2.09
+   6 │  2.9557   -0.0771767      1      2      0      0     -1   2.09         2.09         2.64589e-6
+   7 │  4.17999  11.0244         1      2     -2      0      0  -4.17999     -2.64589e-6  -2.64589e-6
+   8 │  4.17999  11.0244         1      2      0     -2      0  -2.64589e-6  -4.17999     -2.64589e-6
+   9 │  4.17999  11.0233         1      2      0      0     -2  -2.64589e-6  -2.64589e-6  -4.17999
+  10 │  4.17999  11.0233         1      2     -1     -1      1   2.64589e-6   2.64589e-6   4.17999
+  11 │  4.17999  11.0244         1      2     -1      1     -1   2.64589e-6   4.17999      2.64589e-6
+  12 │  4.17999  11.0244         1      2      1     -1     -1   4.17999      2.64589e-6   2.64589e-6
  Writing CSV:jx2.col.spin.wannier_nio_atomij_1_1_[all_all]_ChemPdelta_0.0.csv
-12×8 DataFrames.DataFrame
-│ Row │ Distance │ JmeV        │ Rx    │ Ry    │ Rz    │ Dx       │ Dy       │ Dz       │
-│     │ Float64  │ Float64     │ Int64 │ Int64 │ Int64 │ Float64  │ Float64  │ Float64  │
-├─────┼──────────┼─────────────┼───────┼───────┼───────┼──────────┼──────────┼──────────┤
-│ 1   │ 2.9557   │ 0.0277095   │ -1    │ 0     │ 1     │ -2.09    │ 0.0      │ 2.09     │
-│ 2   │ 2.9557   │ 0.0274556   │ -1    │ 1     │ 0     │ -2.09    │ 2.09     │ 0.0      │
-│ 3   │ 2.9557   │ 0.0277095   │ 0     │ -1    │ 1     │ 0.0      │ -2.09    │ 2.09     │
-│ 4   │ 2.9557   │ 0.0277095   │ 0     │ 1     │ -1    │ 0.0      │ 2.09     │ -2.09    │
-│ 5   │ 2.9557   │ 0.0274556   │ 1     │ -1    │ 0     │ 2.09     │ -2.09    │ 0.0      │
-│ 6   │ 2.9557   │ 0.0277095   │ 1     │ 0     │ -1    │ 2.09     │ 0.0      │ -2.09    │
-│ 7   │ 5.11942  │ -0.00451954 │ -2    │ 1     │ 1     │ -4.17999 │ 2.09     │ 2.09     │
-│ 8   │ 5.11942  │ -0.00451977 │ -1    │ -1    │ 2     │ -2.09    │ -2.09    │ 4.17999  │
-│ 9   │ 5.11942  │ -0.00451936 │ -1    │ 2     │ -1    │ -2.09    │ 4.17999  │ -2.09    │
-│ 10  │ 5.11942  │ -0.00451954 │ 1     │ -2    │ 1     │ 2.09     │ -4.17999 │ 2.09     │
-│ 11  │ 5.11942  │ -0.00451995 │ 1     │ 1     │ -2    │ 2.09     │ 2.09     │ -4.17999 │
-│ 12  │ 5.11942  │ -0.00451936 │ 2     │ -1    │ -1    │ 4.17999  │ -2.09    │ -2.09    │
+12×10 DataFrame
+ Row │ Distance  JmeV         Atom1  Atom2  Rx     Ry     Rz     Dx        Dy        Dz
+     │ Float64   Float64      Int64  Int64  Int64  Int64  Int64  Float64   Float64   Float64
+─────┼────────────────────────────────────────────────────────────────────────────────────────
+   1 │  2.9557    0.0696555       1      1     -1      0      1  -2.09      0.0       2.09
+   2 │  2.9557    0.0692931       1      1     -1      1      0  -2.09      2.09      0.0
+   3 │  2.9557    0.0696555       1      1      0     -1      1   0.0      -2.09      2.09
+   4 │  2.9557    0.0696555       1      1      0      1     -1   0.0       2.09     -2.09
+   5 │  2.9557    0.0692931       1      1      1     -1      0   2.09     -2.09      0.0
+   6 │  2.9557    0.0696555       1      1      1      0     -1   2.09      0.0      -2.09
+   7 │  5.11942  -0.00579205      1      1     -2      1      1  -4.17999   2.09      2.09
+   8 │  5.11942  -0.0057945       1      1     -1     -1      2  -2.09     -2.09      4.17999
+   9 │  5.11942  -0.00579205      1      1     -1      2     -1  -2.09      4.17999  -2.09
+  10 │  5.11942  -0.00579205      1      1      1     -2      1   2.09     -4.17999   2.09
+  11 │  5.11942  -0.0057945       1      1      1      1     -2   2.09      2.09     -4.17999
+  12 │  5.11942  -0.00579205      1      1      2     -1     -1   4.17999  -2.09     -2.09
  Writing Plot:Jplot_1_1,2_all_all.pdf
+ Writing Plot:Jplot_1_1,2_all_all.svg
 ================ All done =============
 ```
 
