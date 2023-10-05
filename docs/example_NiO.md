@@ -71,58 +71,60 @@ The output files are `jx2.col.spin.wannier_nio_atomij_1_1_[all_all]_ChemPdelta_0
 
 
 ```sh
- DFTforge Version 1.0.1
+ DFTforge Version 1.3.2
 Jx_postprocess started (julia Jx_postprocess.jl --help for inputs)
 ================ User input =============
 cellvectors => 2_2_2
 baseatom1 => 1
-root_dir => examples/NiO_G-AFM.OpenMx/jx2.col.spin_0.0
+root_dir => jx2.col.spin_0.0
 orbital_name => all_all
 atom2 => 1,2
 ================ Selected result *.jld2 files =============
-examples/NiO_G-AFM.OpenMx/jx2.col.spin_0.0/jx2.col.spin_nio_atomij_1_1_[all_all]_ChemPdelta_0.0.jld2
-examples/NiO_G-AFM.OpenMx/jx2.col.spin_0.0/jx2.col.spin_nio_atomij_1_2_[all_all]_ChemPdelta_0.0.jld2
+jx2.col.spin_0.0/jx2.col.spin_nio_atomij_1_1_[all_all]_ChemPdelta_0.0.jld2
+jx2.col.spin_0.0/jx2.col.spin_nio_atomij_1_2_[all_all]_ChemPdelta_0.0.jld2
 ================ Selected result *.jld2 files =============
+[0.0 0.0 0.0; 4.1799999990685945 4.1799999990685945 4.1799999990685945; 2.0899999995342973 2.0899999995342973 2.0899999995342973; 6.269999998602892 6.269999998602892 6.269999998602892]
 (1, 2)atom_(i, j):(1, 2) global_xyz:([0.0, 0.0, 0.0] [4.1799999990685945, 4.1799999990685945, 4.1799999990685945])
 (1, 1)atom_(i, j):(1, 1) global_xyz:([0.0, 0.0, 0.0] [0.0, 0.0, 0.0])
 ================ Writing CSV & Plotfile  =============
- Writing CSV:jx2.col.spin_nio_atomij_1_2_[all_all]_ChemPdelta_0.0.csv
-12×8 DataFrames.DataFrame
-│ Row │ Distance │ JmeV      │ Rx    │ Ry    │ Rz    │ Dx          │ Dy          │ Dz      │
-│     │ Float64  │ Float64   │ Int64 │ Int64 │ Int64 │ Float64     │ Float64     │ Float64 │
-├─────┼──────────┼───────────┼───────┼───────┼───────┼─────────────┼─────────────┼─────────┤
-│ 1   │ 2.95571  │ 0.0473267 │ -1    │ -1    │ 0     │ -2.09       │ -2.09       │ 0.0     │
-│ 2   │ 2.95571  │ 0.0473267 │ -1    │ 0     │ -1    │ -2.09       │ 0.0         │ -2.09   │
-│ 3   │ 2.95571  │ 0.0473267 │ 0     │ -1    │ -1    │ 0.0         │ -2.09       │ -2.09   │
-│ 4   │ 2.95571  │ 0.0473267 │ -1    │ 0     │ 0     │ 0.0         │ 2.09        │ 2.09    │
-│ 5   │ 2.95571  │ 0.0473267 │ 0     │ -1    │ 0     │ 2.09        │ 0.0         │ 2.09    │
-│ 6   │ 2.95571  │ 0.0473267 │ 0     │ 0     │ -1    │ 2.09        │ 2.09        │ 0.0     │
-│ 7   │ 4.18     │ 4.85915   │ -2    │ 0     │ 0     │ -4.18       │ 0.0         │ 0.0     │
-│ 8   │ 4.18     │ 4.85915   │ -1    │ -1    │ 1     │ 8.88178e-16 │ 8.88178e-16 │ 4.18    │
-│ 9   │ 4.18     │ 4.85915   │ -1    │ 1     │ -1    │ 0.0         │ 4.18        │ 0.0     │
-│ 10  │ 4.18     │ 4.85915   │ 0     │ -2    │ 0     │ 0.0         │ -4.18       │ 0.0     │
-│ 11  │ 4.18     │ 4.85915   │ 0     │ 0     │ -2    │ 0.0         │ 0.0         │ -4.18   │
-│ 12  │ 4.18     │ 4.85915   │ 1     │ -1    │ -1    │ 4.18        │ 0.0         │ 0.0     │
- Writing CSV:jx2.col.spin_nio_atomij_1_1_[all_all]_ChemPdelta_0.0.csv
-12×8 DataFrames.DataFrame
-│ Row │ Distance │ JmeV       │ Rx    │ Ry    │ Rz    │ Dx      │ Dy      │ Dz      │
-│     │ Float64  │ Float64    │ Int64 │ Int64 │ Int64 │ Float64 │ Float64 │ Float64 │
-├─────┼──────────┼────────────┼───────┼───────┼───────┼─────────┼─────────┼─────────┤
-│ 1   │ 2.95571  │ -0.562037  │ -1    │ 0     │ 1     │ -2.09   │ 0.0     │ 2.09    │
-│ 2   │ 2.95571  │ -0.562037  │ -1    │ 1     │ 0     │ -2.09   │ 2.09    │ 0.0     │
-│ 3   │ 2.95571  │ -0.562037  │ 0     │ -1    │ 1     │ 0.0     │ -2.09   │ 2.09    │
-│ 4   │ 2.95571  │ -0.562037  │ 0     │ 1     │ -1    │ 0.0     │ 2.09    │ -2.09   │
-│ 5   │ 2.95571  │ -0.562037  │ 1     │ -1    │ 0     │ 2.09    │ -2.09   │ 0.0     │
-│ 6   │ 2.95571  │ -0.562037  │ 1     │ 0     │ -1    │ 2.09    │ 0.0     │ -2.09   │
-│ 7   │ 5.11943  │ -0.0273863 │ -2    │ 1     │ 1     │ -4.18   │ 2.09    │ 2.09    │
-│ 8   │ 5.11943  │ -0.0273863 │ -1    │ 2     │ -1    │ -2.09   │ 4.18    │ -2.09   │
-│ 9   │ 5.11943  │ -0.0273863 │ 1     │ -2    │ 1     │ 2.09    │ -4.18   │ 2.09    │
-│ 10  │ 5.11943  │ -0.0273863 │ 2     │ -1    │ -1    │ 4.18    │ -2.09   │ -2.09   │
-│ 11  │ 5.11943  │ -0.0273863 │ -1    │ -1    │ 2     │ -2.09   │ -2.09   │ 4.18    │
-│ 12  │ 5.11943  │ -0.0176701 │ -1    │ 0     │ 0     │ -4.18   │ -2.09   │ -2.09   │
- Writing Plot:Jplot_1_1,2_all_all.pdf
+2 2
+ Writing CSV:jx2.col.spin_nio_atomij_1_2_[all_all]_ChemPdelta_0.0__1.csv
+12×10 DataFrame
+ Row │ Distance  JmeV       Atom1  Atom2  Rx     Ry     Rz     Dx            Dy            Dz
+     │ Float64   Float64    Int64  Int64  Int64  Int64  Int64  Float64       Float64       Float64
+─────┼─────────────────────────────────────────────────────────────────────────────────────────────
+   1 │  2.95571  -0.238341      1      2     -1     -1      0  -2.09         -2.09            0.0
+   2 │  2.95571  -0.238341      1      2     -1      0     -1  -2.09          0.0            -2.09
+   3 │  2.95571  -0.238341      1      2      0     -1     -1   0.0          -2.09           -2.09
+   4 │  2.95571  -0.238341      1      2     -1      0      0   0.0           2.09            2.09
+   5 │  2.95571  -0.238341      1      2      0     -1      0   2.09          0.0             2.09
+   6 │  2.95571  -0.238341      1      2      0      0     -1   2.09          2.09            0.0
+   7 │  4.18      8.54461       1      2     -2      0      0  -4.18          0.0             0.0
+   8 │  4.18      8.5446        1      2     -1     -1      1   8.88178e-16   8.88178e-16     4.18
+   9 │  4.18      8.54461       1      2     -1      1     -1   0.0           4.18            0.0
+  10 │  4.18      8.54461       1      2      0     -2      0   0.0          -4.18            0.0
+  11 │  4.18      8.5446        1      2      0      0     -2   0.0           0.0            -4.18
+  12 │  4.18      8.54461       1      2      1     -1     -1   4.18          0.0             0.0
+ Writing CSV:jx2.col.spin_nio_atomij_1_1_[all_all]_ChemPdelta_0.0__1.csv
+12×10 DataFrame
+ Row │ Distance  JmeV        Atom1  Atom2  Rx     Ry     Rz     Dx       Dy       Dz
+     │ Float64   Float64     Int64  Int64  Int64  Int64  Int64  Float64  Float64  Float64
+─────┼────────────────────────────────────────────────────────────────────────────────────
+   1 │  2.95571  0.160754        1      1     -1      0      1    -2.09     0.0      2.09
+   2 │  2.95571  0.160753        1      1     -1      1      0    -2.09     2.09     0.0
+   3 │  2.95571  0.160754        1      1      0     -1      1     0.0     -2.09     2.09
+   4 │  2.95571  0.160754        1      1      0      1     -1     0.0      2.09    -2.09
+   5 │  2.95571  0.160753        1      1      1     -1      0     2.09    -2.09     0.0
+   6 │  2.95571  0.160754        1      1      1      0     -1     2.09     0.0     -2.09
+   7 │  5.11943  0.00673793      1      1     -2      1      1    -4.18     2.09     2.09
+   8 │  5.11943  0.00673793      1      1     -1      2     -1    -2.09     4.18    -2.09
+   9 │  5.11943  0.00673793      1      1      1     -2      1     2.09    -4.18     2.09
+  10 │  5.11943  0.00673793      1      1      2     -1     -1     4.18    -2.09    -2.09
+  11 │  5.11943  0.00673793      1      1     -1     -1      2    -2.09    -2.09     4.18
+  12 │  5.11943  0.00624584      1      1     -1      0      0    -4.18    -2.09    -2.09
+ Writing Plot:Jplot_1_1,2_all_all__1.pdf
+ Writing Plot:Jplot_1_1,2_all_all__1.svg
 ================ All done =============
-
 ```
 
 <style>
@@ -152,8 +154,6 @@ HS.fileout                   on        # on|off, default=off
 # This is DFT-forge TOML file
 HamiltonianType = "OpenMX" # OpenMX, OpenMXWannier, Wannier90
 spintype = "co_spin" #Set Spin type, para, co_spin, nc_spin
-
-#result_file = "../examples/NiO/4cell/Ni6.0_O5.0-s2p2d2f1-4.25_0.0-4.180-k10/nio.scfout"
 result_file = "nio.scfout"
 atom12 = [[1,1],[1,2]]
 
@@ -199,28 +199,30 @@ GREEN='\033[0;32m'
 NC='\033[0m'
 
 
+JX_ROOT=`pwd`
 source ~/.profile # to add Julia to path
 printf "${BLUE} 0. Unzip the example ${NC} \n"
-printf "${BLUE} examples/NiO_G-AFM_U0.OpenMx ${NC} \n"
+printf "${BLUE} examples/NiO_G-AFM.OpenMx ${NC} \n"
 
-#cd "examples/NiO_G-AFM.OpenMx"
-cd "examples/NiO_G-AFM_U0.OpenMx"
+cd "examples/NiO_G-AFM.OpenMx"
 
 # Unzip dft result
 # nio.scf : OpenMX full Hamiltonian info
 # nio.HWR : Wannier Hamiltonian from OpenMX
-tar xvf nio_dft_result.tar.xz
+tar xvf nio_dft_result.tar.gz
 
-cd "../../"
-# obtain J(q)
+# cd "../../"
+# obtain J(q) long excution
 printf "${BLUE} 1. Calculate J(q) ${NC} \n"
-printf "${GREEN}   julia -p 4 src/Jx_col_spin_exchange.jl  -T examples/NiO_G-AFM_U0.OpenMx/nio_J_openmx.toml ${NC} \n"
+printf "${GREEN}   julia -p 4 src/Jx_col_spin_exchange.jl  -T examples/NiO_G-AFM.OpenMx/nio_J_openmx.toml ${NC} \n"
 printf "${GREEN}   'julia --machine-file <file>' instead of 'julia -p 4' is also possible ${NC} \n"
 sleep 2
-julia -p 4 src/Jx_col_spin_exchange.jl  -T examples/NiO_G-AFM_U0.OpenMx/nio_J_openmx.toml
-# J(q) -> J(R)
+#julia -p 4 src/Jx_col_spin_exchange.jl  -T nio_J_openmx.toml
+julia -p 4 $JX_ROOT/src/Jx_col_spin_exchange.jl  -T nio_J_openmx.toml
+
+# J(q) -> J(R) short post processing
 printf "${BLUE} 2. Transform J(q) -> J(Rij) ${NC} \n"
-printf "${GREEN}   julia  src/Jx_postprocess.jl --cellvectors  2_2_2 --baseatom1 1 --atom2 1,2 --orbital_name all_all  examples/NiO_G-AFM_U0.OpenMx/jx2.col.spin_0.0 ${NC} \n"
+printf "${GREEN}   julia  src/Jx_postprocess.jl --cellvectors  2_2_2 --baseatom1 1 --atom2 1,2 --orbital_name all_all  examples/NiO_G-AFM.OpenMx/jx2.col.spin_0.0 ${NC} \n"
 sleep 2
-julia  src/Jx_postprocess.jl --cellvectors  2_2_2 --baseatom1 1 --atom2 1,2 --orbital_name all_all  examples/NiO_G-AFM_U0.OpenMx/jx2.col.spin_0.0
+julia  $JX_ROOT/src/Jx_postprocess.jl --cellvectors  2_2_2 --baseatom1 1 --atom2 1,2 --orbital_name all_all jx2.col.spin_0.0
 ```
