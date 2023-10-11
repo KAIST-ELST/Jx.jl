@@ -3,7 +3,7 @@
 #
 ######################################################
 # Change to your path See OpenMX manual for help.
-DATA.PATH   /home/users1/bluehope/opt/share/DFT_DATA13 
+DATA.PATH   /YOUR_OPENMX_DIR/DFT_DATA19 
 ######################################################
 
 System.CurrrentDirectory         ./    # default=./
@@ -19,14 +19,14 @@ level.of.fileout                  1    # default=1 (0-2)
 Species.Number 4
 
 <Definition.of.Atomic.Species
-Ni     Ni6.0S-s2p2d2f1  Ni_PBE13S
-O      O5.0-s2p2d1  O_PBE13
-Nipro  Ni6.0S-s1p1d1  Ni_PBE13S
-Opro      O5.0-s1p1  O_PBE13
+Ni     Ni6.0S-s2p2d2f1  Ni_PBE19S
+O      O5.0-s2p2d1  O_PBE19
+Nipro  Ni6.0S-s1p1d1  Ni_PBE19S
+Opro      O5.0-s1p1  O_PBE19
 Definition.of.Atomic.Species>
 
 <Hubbard.U.values   # eV
-Ni    1s 0.0 2s 0.0 1p 0.0 2p 0.0 1d 4.25 2d 0.0 1f 0.0
+Ni    1s 0.0 2s 0.0 1p 0.0 2p 0.0 1d 5.25 2d 0.0 1f 0.0
 O     1s 0.0 2s 0.0 1p 0.0 2p 0.0 1d 0.0
 Nipro 1s 0.0        1p 0.0        1d 0.0
 Opro  1s 0.0        1p 0.0

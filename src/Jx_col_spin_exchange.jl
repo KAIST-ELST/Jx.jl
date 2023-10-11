@@ -9,7 +9,7 @@
 
 #using ProgressMeter
 __precompile__(true)
-X_VERSION = VersionNumber("0.9.8-pub+20210410");
+X_VERSION = VersionNumber("0.9.8-pub+20210410"); # version?
 println(" JX_VERSION: ",X_VERSION)
 println(" Visit https://kaist-elst.github.io/DFTforge.jl/ for details & updates ")
 println(" Tested with Julia v1.0 and v1.6 which the most recent version of Julia in 202104 https://julialang.org/")
@@ -64,8 +64,8 @@ DFT_type = DFTcommon.OpenMX
 ## 1.2 Read input from argument & TOML file
 arg_input = DFTcommon.Arg_Inputs();
 arg_input = parse_input(ARGS,arg_input)
-#arg_input.TOMLinput = "nio_J_wannier.toml" # Debug
-#arg_input.TOMLinput = "nio_J_openmx.toml" # Debug
+#arg_input.TOMLinput = "vasp_lobster/ver_3.2.0/test.toml" # Debug
+
 arg_input = parse_TOML(arg_input.TOMLinput,arg_input)
 # let argument override
 arg_input = parse_input(ARGS,arg_input)
@@ -579,11 +579,11 @@ num_return = 8; #local scope
 
 
     # Index convetion: J_ij[nk,mkq]
-    J_ij_down_up_up_down_k_kq =  0.5./(-Enk_down_Emkq_up).*dFnk_down_Fmkq_up .* Vi_Vj_down_up_up_down_k_kq ;
-    J_ij_down_up_up_down_kq_k =  0.5./(-Enk_down_Emkq_up).*dFnk_down_Fmkq_up .* Vi_Vj_down_up_up_down_kq_k ;
+    J_ij_down_up_up_down_k_kq =  1.0./(-Enk_down_Emkq_up).*dFnk_down_Fmkq_up .* Vi_Vj_down_up_up_down_k_kq ;
+    J_ij_down_up_up_down_kq_k =  1.0./(-Enk_down_Emkq_up).*dFnk_down_Fmkq_up .* Vi_Vj_down_up_up_down_kq_k ;
 
-    J_ij_up_down_down_up_k_kq =  0.5./(-Enk_up_Emkq_down).*dFnk_up_Fmkq_down .* Vi_Vj_up_down_down_up_k_kq ;
-    J_ij_up_down_down_up_kq_k =  0.5./(-Enk_up_Emkq_down).*dFnk_up_Fmkq_down .* Vi_Vj_up_down_down_up_kq_k ;
+    J_ij_up_down_down_up_k_kq =  1.0./(-Enk_up_Emkq_down).*dFnk_up_Fmkq_down .* Vi_Vj_up_down_down_up_k_kq ;
+    J_ij_up_down_down_up_kq_k =  1.0./(-Enk_up_Emkq_down).*dFnk_up_Fmkq_down .* Vi_Vj_up_down_down_up_kq_k ;
 
 
     x_ij_down_up_up_down_k_kq =  0.5./(-Enk_down_Emkq_up).*dFnk_down_Fmkq_up .* x_down_up_up_down_k_kq ;

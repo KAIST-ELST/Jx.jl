@@ -2,6 +2,7 @@
 # Hongkee Yoon Hongkeeyoon@kaist.ac.kr
 # 2019.05
 # https://kaist-elst.github.io/DFTforge.jl/
+# 2023.09 Editted by Do Hoon kiem (kiem.dohoon@gmail.com)
 ###############################################################################
 
 ###
@@ -47,6 +48,7 @@ import Plots
 import DFTforge.Glob
 
 using Statistics
+
 
 ###
 println("================ User input =============")
@@ -274,7 +276,8 @@ for xyz_i in 1:1
 
        basefile =  splitext(file_name)[1]
        #basefile =  splitext(file_list[result_i])[1]
-       csv_filename = basefile * "__" * string(xyz_i) * ".csv"
+       #csv_filename = basefile * "__" * string(xyz_i) * ".csv"
+       csv_filename = basefile * ".csv" # indexing is not needed for collinear
        println(" Writing CSV:", basename(csv_filename))
 
        dist_vect = J_ij_R[result_i][3]
@@ -295,8 +298,11 @@ for xyz_i in 1:1
                             Dy = dist_vect[:,2],
                             Dz = dist_vect[:,3]
                            ); delim=',' )
-
-       DF = CSV.read(csv_filename)
+       if VERSION < v"1.6.0"
+         DF = CSV.read(csv_filename)  ## until julia version 1.5
+       else
+         DF = CSV.read(csv_filename, DataFrames.DataFrame) ## after julia ver 1.6 
+       end
        println(DF[1:12,:])
    end
 
@@ -323,13 +329,15 @@ for xyz_i in 1:1
    end
 
    plot_filename = "Jplot_" * string(base_atom) * "_" *
-      join(atom2_name_list,",") * "_" * orbital_name * "__" *string(xyz_i) *".pdf"
+      #join(atom2_name_list,",") * "_" * orbital_name * "__" *string(xyz_i) *".pdf"
+      join(atom2_name_list,",") * "_" * orbital_name * ".pdf"
 
    println(" Writing Plot:",plot_filename)
    Plots.savefig(joinpath(root_dir,plot_filename))
 
    plot_filename = "Jplot_" * string(base_atom) * "_" *
-      join(atom2_name_list,",") * "_" * orbital_name * "__" *string(xyz_i) *".svg"
+      #join(atom2_name_list,",") * "_" * orbital_name * "__" *string(xyz_i) *".svg"
+      join(atom2_name_list,",") * "_" * orbital_name * ".svg"
 
    println(" Writing Plot:",plot_filename)
    Plots.savefig(joinpath(root_dir,plot_filename))
