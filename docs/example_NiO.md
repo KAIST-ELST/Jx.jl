@@ -151,14 +151,14 @@ HS.fileout                   on        # on|off, default=off
 ###  `nio_J_openmx.toml`
 
 ```toml
-# This is DFT-forge TOML file
+# This is the DFT-forge TOML file
 HamiltonianType = "OpenMX" # OpenMX, OpenMXWannier, Wannier90
 spintype = "co_spin" #Set Spin type, para, co_spin, nc_spin
 result_file = "nio.scfout"
 atom12 = [[1,1],[1,2]]
 
 
-# k,q for calculation. Using the same k,q points number is recomended
+# k,q for calculation. Using the same k,q points number is recommended
 k_point_num = [6,6,6]
 q_point_num = [6,6,6]
 
@@ -169,7 +169,7 @@ q_point_num = [6,6,6]
 #<Definition.of.Atomic.Species
 #Ni     Ni6.0S-s2p2d2f1  Ni_PBE13S
 ##################################################################################################
-# s2p2d2f1 represent 2 s orbitals, 2 p orbitals, 2 d orbitals, and 1 f orbital for the Ni.
+# s2p2d2f1 represents 2 s orbitals, 2 p orbitals, 2 d orbitals, and 1 f orbital for the Ni.
 # Therefore, orbital indexs 1,2 standsfor s1, s2
 # 3,4,5: p1   5,6,7: p2
 # 9,10,11,12,13: d1 14,15,16,17,18: d2
@@ -177,7 +177,7 @@ q_point_num = [6,6,6]
 #
 # If we want to calculate the interaction between d orbitals of Ni,
 # you can choose [9-13] orbital.
-# Each orbital index names is as follows:
+# Each orbital index name is as follows:
 # 9:dz2, 10:dx2y2, 11:dxy, 12:dyz, 13:dxz
 # You can check it through nio.out file.
 ##################################################################################################
@@ -213,7 +213,7 @@ cd "examples/NiO_G-AFM.OpenMx"
 tar xvf nio_dft_result.tar.gz
 
 # cd "../../"
-# obtain J(q) long excution
+# obtain J(q) long execution
 printf "${BLUE} 1. Calculate J(q) ${NC} \n"
 printf "${GREEN}   julia -p 4 src/Jx_col_spin_exchange.jl  -T examples/NiO_G-AFM.OpenMx/nio_J_openmx.toml ${NC} \n"
 printf "${GREEN}   'julia --machine-file <file>' instead of 'julia -p 4' is also possible ${NC} \n"
