@@ -34,11 +34,10 @@ sitemap: true
 ---
 
 
-
-![Julia1.3](https://img.shields.io/badge/Julia-1.3-blue.svg?longCache=true)
-![Julia1.4](https://img.shields.io/badge/Julia-1.4-blue.svg?longCache=true)
-![Julia1.5](https://img.shields.io/badge/Julia-1.5-blue.svg?longCache=true)
 ![Julia1.6](https://img.shields.io/badge/Julia-1.6-blue.svg?longCache=true)
+![Julia1.7](https://img.shields.io/badge/Julia-1.7-blue.svg?longCache=true)
+![Julia1.8](https://img.shields.io/badge/Julia-1.8-blue.svg?longCache=true)
+![Julia1.9](https://img.shields.io/badge/Julia-1.9-blue.svg?longCache=true)
 
 # *Jx*: The MFT software
 *Jx* is open source package for calculating spin exchange coupling parameters *J*<sub>ij</sub> based on [MFT (Magentic force theory)](acknowledegment/#the-mft-history).
