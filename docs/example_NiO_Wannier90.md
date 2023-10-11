@@ -31,11 +31,12 @@ After Wannier Hamiltonian is constructed, the MFT calculation procedures consist
 ## The required files for Jx MFT calculation (with Wannier90)
 
 The required files for MFT calculation: Wannier90 Hamiltonian files and toml input files.
-> - Wannier90 Hamiltonian files  (`wannier90.up_hr.dat`, `wannier90.dn_hr.dat`) 
-> - [Wannier90 info files (`wannier90.up.win`, `wannier90.dn.win`)](#wannier90-infofile)
+> - Wannier90 Hamiltonian files  (`wannier90.1_hr.dat`, `wannier90.2_hr.dat`) (for up and down spins, respectively)
+> - [Wannier90 info files (`wannier90.1.win`, `wannier90.2.win`)](#wannier90-infofile)
 > - [The *Jx* input file `*.toml`](#nio_J_wannier90.toml)
 
-The important tasks are to write `feremi_energy` in `Wannier90 info` and num of atoms, atom position, orbital info in the `input toml` file.
+The important tasks are to write `feremi_energy` in `Wannier90 info` and num of atoms, atom position, orbital info in the `input toml` file. Use '`grep fermi OUTCAR`'.
+
 
 
 ## J(q) calculation
@@ -64,9 +65,9 @@ For MFT with Wannier Hamiltonians, the output path is `jx2.col.spin.wannier_0.0`
 julia  src/Jx_postprocess.jl --cellvectors  2_2_2 --baseatom 1 --atom2 1,2 --orbital_name eg_eg  jx2.col.spin.wannier_0.0
 ```
 
-The output files are `jx.col.spin.wannier_nio_atomij_1_1_[eg_eg]_ChemPdelta_0.0.csv`
-`jx.col.spin.wannier_nio_atomij_1_2_[eg_eg]_ChemPdelta_0.0.csv` and the ploted image `Jplot_1_1,2_eg_eg.pdf`.
-> Note that the raw sign of the MFT results contains information about whether a system likes or dislikes the current spin order. So, at the second nearest (4.18 Å) between 1-2 spins, +6 meV means that current antiferromagnetic ordering is preferred.
+The output files are `jx2.col.spin.wannier_wannier90_atomij_1_1_atom1m_[,]_atom2m_[,]_[eg_eg__all__all]_ChemPdelta_0.0.csv`
+`jx2.col.spin.wannier_wannier90_atomij_1_2_atom1m_[,]_atom2m_[,]_[eg_eg__all__all]_ChemPdelta_0.0.csv` and the ploted image `Jplot_1_1,2_eg_eg.pdf`.
+> Note that the raw sign of the MFT results contains information about whether a system likes or dislikes the current spin order. So, at the second nearest (4.18 Å) between 1-2 spins, +12 meV means that current antiferromagnetic ordering is preferred.
 
 
 The other orbitals interaction can be plotted by changing `orbital_name` options as follows `--orbital_name eg_t2g`, `--orbital_name t2g_t2g`, `--orbital_name t2g_eg`.
@@ -86,45 +87,53 @@ The other orbitals interaction can be plotted by changing `orbital_name` options
 
 ### Wannier90 infofile
  
- * The `fermi_energy` MUST be set for BOTH `wannier90.dn.win` and `wannier90.up.win` files from the DTF result.
+ * The `fermi_energy` MUST be set for BOTH `wannier90.1.win` and `wannier90.2.win` files from the DFT results. User can find it by `grep fermi OUTCAR`.
 
 
 
 
 ```toml
-num_bands =    32  ! set to NBANDS by VASP
-num_wann =     16  ! # user setting
+###### Energy windows #########
+  dis_win_min = -1
+  dis_win_max = 10
+  dis_froz_min = -1
+  dis_froz_max = 6
+###############################
 
-! use_bloch_phases = T
+######### Wannierizing ########
+  dis_num_iter    = 10000
 
-begin unit_cell_cart
-     4.1700000     2.0850000     2.0850000
-     2.0850000     4.1700000     2.0850000
-     2.0850000     2.0850000     4.1700000
-end unit_cell_cart
 
-begin atoms_cart
-Ni       0.0000000     0.0000000     0.0000000
-Ni       4.1700000     4.1700000     4.1700000
-O        2.0850000     2.0850000     2.0850000
-O        6.2550000     6.2550000     6.2550000
-end atoms_cart
+######### Projections ########
+  begin projections
+  f= 0.000, 0.000, 0.000:d
+  f=-0.500,-0.500,-0.500:d
+  f= 0.250, 0.250, 0.250:p
+  f=-0.250,-0.250,-0.250:p
+  end projections
+
+
+#########################################
+# Band Plots
+#########################################
+
+  bands_plot = T
+  begin kpoint_path
+   Z' 0.0000 0.0000  0.5000   Y  0.0000  0.5000   0.0000
+   Y  0.0000 0.5000  0.0000   X  0.5000  0.0000   0.0000
+   X  0.5000 0.0000  0.0000   G  0.0000  0.0000   0.0000
+   G  0.0000 0.0000  0.0000   Z  0.5000  0.5000   0.5000
+   Z  0.5000 0.5000  0.5000   K  0.8125  0.34375  0.34375
+   K  0.8125 0.34375 0.34375  U  0.1875 -0.34375 -0.34375
+  end kpoint_path
+  bands_num_points 20
 
 ###### writing hamiltonian ######
-write_hr = .true.
+  WRITE_HR = True
 ###############################
 
 ###### fermi energy  ##########
-fermi_energy = 6.21888783      # <- MUST BE UPDATED FOR EACH SYSTEMS
-###############################
-
-
-
-###### Energy windows #########
-dis_win_min =  -4.0 !-3.0
-dis_win_max =  10.0
-dis_froz_min =  5.3 !8.0 !5.2
-dis_froz_max =  6.3 !9.9
+  fermi_energy =  8.7042
 ###############################
 ```
 
@@ -137,13 +146,13 @@ HamiltonianType = "Wannier90"
 spintype = "co_spin"        #Set Spin type, para, co_spin, nc_spin
 
 # wannier90.up.win, wannier90.up_hr.dat // wannier90.dn.win, wannier90.dn_hr.dat files are required.
-result_file = ["wannier90.up","wannier90.dn"]
+result_file = ["wannier90.1","wannier90.2"]
 
 atom12 = [[1,1],[1,2]]
 
 
-k_point_num = [10,10,10]
-q_point_num = [10,10,10]
+k_point_num = [8,8,8]
+q_point_num = [8,8,8]
 
 [orbitals]
 orbitalselection = true # true , false
@@ -160,19 +169,21 @@ orbital_mask2_names = "[eg,t2g]"
 
 #orbital_mask1_names = "[dz2,dxz,dyz,dx2y2,dxy]"
 #orbital_mask2_names = "[dz2,dxz,dyz,dx2y2,dxy]"
+
 [wannier_optional]
-# atom position info dose not exists at OpenMX wannier
-atomnum = 4
+# atom position info dose not exists at wannier
 # atompos in fractional coordinate
-atompos = [[0.0, 0.0, 0.0],          # atom1 Ni1
-        [0.5, 0.5, 0.5],             # atom2 Ni2
-        [0.250, 0.250, 0.250],       # atom3 O1
-        [0.750, 0.750, 0.750]]       # atom4 O2
+# Please check the atomic position through .wout
+atomnum = 4
+atompos = [[   0.0,    0.0,  0.0  ],       # atom1 Ni1
+           [  -0.5,   -0.5, -0.5  ],       # atom2 Ni2
+           [ 0.250,  0.250,  0.250],       # atom3 O1
+           [-0.250, -0.250, -0.250] ]      # atom4 O2
 
 # orbital indexes for each atoms
-atoms_orbitals_list = [[1,2,3,4,5], # atom1 Ni1 d orbitals
-        [6,7,8,9,10],               # atom2 Ni2 d orbitals
-        [11,12,13],                 # atom3 O1 p orbitals
-        [14,15,16]]                 # atom4 O2 p orbitals
+atoms_orbitals_list = [[1,2,3,4,5], # atom1 Ni1
+                [6,7,8,9,10],       # atom2 Ni2
+                [11,12,13],         # atom3 O1
+                [14,15,16]]         # atom4 O2
 
 ```

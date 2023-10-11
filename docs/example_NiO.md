@@ -71,7 +71,7 @@ The output files are `jx2.col.spin.wannier_nio_atomij_1_1_[all_all]_ChemPdelta_0
 
 
 ```sh
- DFTforge Version 1.3.2
+ DFTforge Version 1.3.4
 Jx_postprocess started (julia Jx_postprocess.jl --help for inputs)
 ================ User input =============
 cellvectors => 2_2_2
