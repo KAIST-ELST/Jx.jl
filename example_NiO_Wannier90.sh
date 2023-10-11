@@ -14,7 +14,7 @@ printf "${BLUE} examples/NiO_G-AFM.OpenMx ${NC} \n"
 cd "examples"
 
 # Unzip Wannier90 result
-tar xvf NiO_G_AFM.vasp.Wannier90.tar.xz
+tar -zxvf NiO_G_AFM.vasp.Wannier90.tar.gz
 
 cd "NiO_G_AFM.vasp.Wannier90/wannier90_Ni.d_O.p"
 # obtain J(q) long excution 

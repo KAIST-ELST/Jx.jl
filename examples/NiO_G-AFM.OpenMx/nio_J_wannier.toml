@@ -12,8 +12,8 @@ orbitalselection = false # true , false
 orbital_mask1_list = [[1],[2],[3],[4],[5]]
 orbital_mask2_list = [[1],[2],[3],[4],[5]]
 
-orbital_mask1_names = "[dz2,dx2y2,dxy,dyz,dxz]"
-orbital_mask2_names = "[dz2,dx2y2,dxy,dyz,dxz]"
+orbital_mask1_names = "[dz2,dx2y2,dxy,dxz,dyz]"
+orbital_mask2_names = "[dz2,dx2y2,dxy,dxz,dyz]"
 [wannier_optional]
 # atom position info dose not exists at OpenMX wannier
 atomnum = 4
