@@ -8,7 +8,7 @@ title: "People"
 ## The main developer: [Hongee Yoon](https://bluehope.github.io/online-cv/) 
 <img src="https://bluehope.github.io/online-cv/assets/images/profile2.jpg" alt="Avatar" style="border-radius:50%" width="130px">
 
-Postdoctoral researcher - Department of Physics KAIST
+Assistant Professor of Department of Physics - Kangwon National University
 
 ## The contributors
 
