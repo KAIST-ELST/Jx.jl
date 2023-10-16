@@ -10,6 +10,11 @@ title: "People"
 
 Assistant Professor of Department of Physics - Kangwon National University
 
+## Co-developer: [Do Hoon Kiem](https://dhkiem.github.io/) 
+<img src="https://DHKiem.github.io/images/dhkiem.png" alt="Avatar" style="border-radius:50%" width="130px">
+
+Postdoctoral researcher - Department of Physics KAIST
+
 ## The contributors
 
 ### Taek Jung Kim
@@ -18,11 +23,7 @@ PhD - Department of Physics KAIST
 ### Jae-Hoon Sim
 Postdoctoral researcher - Centre de Physique Théorique, Ecole Polytechnique
 
-### Do Hoon Kiem
-PhD - Department of Physics KAIST
-
 ### Myung Joon Han
-
 Professor of Department of Physics – KAIST
 
 ---
