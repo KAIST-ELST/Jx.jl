@@ -24,7 +24,7 @@ toc_icon: "cog"
 
 This is the example of a G-type ordered NiO with Wannier90.
 In the primitive cell, two spins have different up, down the order.
-After Wannier Hamiltonian is constructed, the MFT calculation procedures consist of two-step processes of [calculating J(q)](#jq-calculation) and [converting J(q) to J(R)](#jq-jr-transformation).
+After the Wannier Hamiltonian is constructed, the MFT calculation procedures consist of two-step processes of [calculating J(q)](#jq-calculation) and [converting J(q) to J(R)](#jq-jr-transformation).
 
 > Before MFT calculation, it is STRONGLY recommended to compare the Wannier band with the original DFT band structure. Especially for the metallic systems, a small difference near the Fermi level could significantly impact linear response calculations.
 
@@ -35,7 +35,7 @@ The required files for MFT calculation: Wannier90 Hamiltonian files and toml inp
 > - [Wannier90 info files (`wannier90.1.win`, `wannier90.2.win`)](#wannier90-infofile)
 > - [The *Jx* input file `*.toml`](#nio_J_wannier90.toml)
 
-The important tasks are to write `feremi_energy` in `Wannier90 info` and num of atoms, atom position, orbital info in the `input toml` file. Use '`grep fermi OUTCAR`'.
+The important tasks are to write `feremi_energy` in `Wannier90 info` and the number of atoms, atom position, and orbital info in the `input toml` file. Use '`grep fermi OUTCAR`'.
 
 
 
@@ -87,7 +87,7 @@ The other orbitals interaction can be plotted by changing `orbital_name` options
 
 ### Wannier90 infofile
  
- * The `fermi_energy` MUST be set for BOTH `wannier90.1.win` and `wannier90.2.win` files from the DFT results. User can find it by `grep fermi OUTCAR`.
+ * The `fermi_energy` MUST be set for BOTH `wannier90.1.win` and `wannier90.2.win` files from the DFT results. Users can find it by `grep fermi OUTCAR`.
 
 
 
