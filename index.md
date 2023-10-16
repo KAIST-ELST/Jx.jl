@@ -42,7 +42,8 @@ sitemap: true
 # *Jx*: The MFT software
 *Jx* is open source package for calculating spin exchange coupling parameters *J*<sub>ij</sub> based on [MFT (Magentic force theory)](acknowledegment/#the-mft-history).
 
-* *Jx* can be downloaded via [Installation guide](docs/quick-start-guide) now.
+* *Jx* can be downloaded via [Installation guide](docs/quick-start-guide) now (2023).
+* Those using the previous version of [CPC paper https://doi.org/10.1016/j.cpc.2019.106927](https://doi.org/10.1016/j.cpc.2019.106927) will find it more convenient to install and update by utilizing the current version.
 <!--* Please refer to the our [CPC paper https://doi.org/10.1016/j.cpc.2019.106927](https://doi.org/10.1016/j.cpc.2019.106927) -->
 
 ![Logo](assets/images/Logo.svg){:style="max-width: 450px"} <!--- #{:height="55%" width="55%" max-width=20px; } --->
@@ -52,8 +53,8 @@ sitemap: true
 
 The **Jx** is a user-friendly and efficient tool to calculate magnetic interaction in solids and molecules.
 Key features are as follows:
-1. Without calculating the supercell, it computes short- and long-term interactions.
-1. It is also possible to calculate an orbital-resolved matrix form of magnetic couplings.
+1. Computes short- and long-term interactions without calculating the supercell.
+1. Calculating an orbital-resolved matrix form of magnetic couplings is also possible.
 
 See [features]({{site.url}}{{ site.baseurl }}/docs/feature) page for more detailed capabilities.
 
