@@ -29,7 +29,7 @@ Details are as follows:
 2. Perform the MFT calculation.
 3. Save  *J*<sub>ij</sub> to CSV files and plot *J*<sub>ij</sub> to PDF file.
 
-# Step by step installation
+# Step-by-step installation
 
 ## 1. Download the Jx code
 ```console
@@ -43,7 +43,7 @@ git clone https://github.com/KAIST-ELST/Jx.jl
 ![Julia1.8](https://img.shields.io/badge/Julia-1.8-blue.svg?longCache=true)
 ![Julia1.9](https://img.shields.io/badge/Julia-1.9-blue.svg?longCache=true)
 
-Currently we support latest Julia 1.6-1.9.* ([https://julialang.org/](https://julialang.org/))
+Currently, we support the latest Julia 1.6-1.9.* ([https://julialang.org/](https://julialang.org/))
 
 
  * For Linux system:
@@ -84,9 +84,9 @@ Pkg.add("DFTforge")
 --->
 
 
-## 4.Run example
+## 4. Run example
 
-### G-type AFM (anti ferromagnetic) NiO example
+### G-type AFM (anti-ferromagnetic) NiO example
 ```bash
 ./example_NiO_OpenMX.sh
 ```
