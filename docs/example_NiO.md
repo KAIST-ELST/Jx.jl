@@ -41,7 +41,7 @@ Run following [script](#example_nio_openmxsh):
 ./example_NiO_OpenMX.sh
 ```
 1. It will automatically unzip pre calculated [OpenMX](openmx-square.org) Hamilton file `NiO.scfout` and *Jx* input `nio_J_openmx.toml` at `examples/NiO_G-AFM.OpenMx/`.
-2. Than, *Jx* will perform *J(q)* calculation (The most time-consuming part. Roughly 5-10 min depending on CPU).
+2. Then, *Jx* will perform *J(q)* calculation (The most time-consuming part. Roughly 5-10 min depending on CPU).
 3. After *J(q)* calculation done, the *J(q)* -> *J(R)* transformation will run.
 
 ----
