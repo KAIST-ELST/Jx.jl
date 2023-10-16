@@ -29,7 +29,7 @@ The basic example of performing *Jx* from full [OpenMX](https://www.openmx-squar
 The basic example of performing *Jx* from Wannier Hamilton is based on [OpenMX](https://www.openmx-square.org/).
 
 ### [NiO Wannier90](example_NiO_Wannier90)
-The basic example to perform *Jx* from [Wannier90](https://wannier.org/) Hamilton.
+The basic example to perform *Jx* from [Wannier90](https://wannier.org/) Hamilton. (For VASP, Quantum espresso, Wine2K, or any other DFT codes)
 
 
 <!--- Add more examples
