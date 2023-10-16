@@ -23,7 +23,7 @@ toc_icon: "cog"
 </html>
 
 
-This is the example of NiO with a G-type order from OpenMX Wannier Hamiltonaion.
+This is the example of NiO with a G-type order from OpenMX Wannier Hamiltonian.
 In the primitive cell, two spins have different up, down order.
 After the electronic structure is given,
 the MFT calculation procedures consist of two processes process of [calculating J(q)](#jq-calculation) and [converting J(q) to J(R)](#jq-jr-transformation).
@@ -70,7 +70,7 @@ The output files are `jx2.col.spin.wannier_nio_atomij_1_1_[all_all]_ChemPdelta_0
 > Note that the raw sign of the MFT results contains information about whether a system likes or dislikes the current spin order. So, at the second nearest (4.18 Å) between 1-2 spins, +11.0 meV means that current antiferromagnetic ordering is preferred.
 
 
-The output at terminal would look like bellow:
+The output at the terminal would look like below:
 
 ```sh
  DFTforge Version 1.3.2
@@ -243,7 +243,7 @@ NC='\033[0m'
 
 
 JX_ROOT=`pwd`
-source ~/.profile # to add Julia to path
+source ~/.profile # to add Julia to the path
 printf "${BLUE} 0. Unzip the example ${NC} \n"
 printf "${BLUE} examples/NiO_G-AFM.OpenMx ${NC} \n"
 
@@ -255,7 +255,7 @@ cd "examples/NiO_G-AFM.OpenMx"
 tar xvf nio_dft_result.tar.gz
 
 # cd "../../"
-# obtain J(q) long excution
+# obtain J(q) long execution
 printf "${BLUE} 1. Calculate J(q) ${NC} \n"
 printf "${GREEN}   julia -p 4 src/Jx_col_spin_exchange.jl  -T examples/NiO_G-AFM.OpenMx/nio_J_wannier.toml ${NC} \n"
 printf "${GREEN}   'julia --machine-file <file>' instead of 'julia -p 4' is also possible ${NC} \n"
