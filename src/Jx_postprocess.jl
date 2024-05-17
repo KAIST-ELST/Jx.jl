@@ -303,7 +303,11 @@ for xyz_i in 1:1
        else
          DF = CSV.read(csv_filename, DataFrames.DataFrame) ## after julia ver 1.6 
        end
-       println(DF[1:12,:])
+       if size(DF,1) > 12
+        println(DF[1:12,:])
+       else
+        println(DF)
+       end
    end
 
    ################################################################################
