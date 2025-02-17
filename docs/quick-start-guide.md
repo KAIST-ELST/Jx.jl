@@ -51,21 +51,22 @@ Currently, we support the latest Julia 1.6-1.9.* ([https://julialang.org/](https
 [Using Julia auto-installer for Linux](https://github.com/abelsiqueira/jill)
 
  ```bash
-echo 'export PATH=~/opt/bin:$PATH' >>~/.profile
-echo 'export PATH=~/opt/bin:$PATH' >>~/.bashrc
-JULIA_INSTALL=~/opt/bin bash -ci "$(curl –fsSL https://raw.githubusercontent.com/abelsiqueira/jill/master/jill.sh)"
+#echo 'export PATH=~/opt/bin:$PATH' >>~/.profile
+#echo 'export PATH=~/opt/bin:$PATH' >>~/.bashrc
+#JULIA_INSTALL=~/opt/bin bash -ci "$(curl –fsSL #https://raw.githubusercontent.com/abelsiqueira/jill/master/jill.sh)"
+curl -fsSL https://install.julialang.org | sh
  ```
  * For OSX
 
 Install [Homebrew](https://brew.sh/)
 
 ```bash
-brew cask install julia
-brew cask upgrade julia
+brew cask install juliaup
+brew cask upgrade juliaup
 ```
 
- * For Windows see: [Julia Download](https://julialang.org/downloads/)
-
+ * See (recommended) [Juliaup](https://github.com/JuliaLang/juliaup?tab=readme-ov-file#windows) or
+ * For Windows see: [Julia Download](https://julialang.org/downloads/) 
 
 ## 3. Install [DFTforge](https://kaist-elst.github.io/DFTforge.jl/)
 ```julia
