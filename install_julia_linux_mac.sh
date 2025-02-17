@@ -27,15 +27,16 @@ sleep 2
 case "$OSTYPE" in
   #solaris*) echo "SOLARIS" ;;
   darwin*)  echo "OSX"
-  brew cask install julia
-  brew cask upgrade julia
+  brew cask install juliaup
+  brew cask upgrade juliaup
   ;;
   linux*)
   echo "Linux"
-  mkdir -p ~/bin
-  echo 'export PATH=~/bin:$PATH' >>~/.profile
-  echo 'export PATH=~/bin:$PATH' >>~/.bashrc
-  JULIA_INSTALL=~/bin  bash -ci "$(curl -fsSL https://raw.githubusercontent.com/abelsiqueira/jill/master/jill.sh)"
+  #mkdir -p ~/bin
+  #echo 'export PATH=~/bin:$PATH' >>~/.profile
+  #echo 'export PATH=~/bin:$PATH' >>~/.bashrc
+  #JULIA_INSTALL=~/bin  bash -ci "$(curl -fsSL https://raw.githubusercontent.com/abelsiqueira/jill/master/jill.sh)"
+  curl -fsSL https://install.julialang.org | sh
   ;;
   bsd*)     echo "BSD"
   echo 'Visit https://julialang.org/downloads/'
